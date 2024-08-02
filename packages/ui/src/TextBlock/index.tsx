@@ -1,12 +1,13 @@
+import { TextBlockType } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
 interface TextBlockProps {
-  type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  type: TextBlockType["type"];
   children: React.ReactNode;
   loaded?: boolean;
 }
 
-const variants = cva([], {
+const variants = cva(["first:pt-0"], {
   variants: {
     type: {
       h1: "pt-12 pb-6 font-heading-1",
@@ -23,7 +24,7 @@ const variants = cva([], {
   },
 });
 
-const TextBlock = ({ type, children, loaded }: TextBlockProps) => {
+export const TextBlock = ({ type, children, loaded }: TextBlockProps) => {
   const BlockTag = `${type}` as keyof JSX.IntrinsicElements;
 
   return (
@@ -36,5 +37,3 @@ const TextBlock = ({ type, children, loaded }: TextBlockProps) => {
     </>
   );
 };
-
-export default TextBlock;
