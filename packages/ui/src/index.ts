@@ -9,4 +9,5 @@ export * from "./Link/index.js";
 export * from "./Logo/index.js";
 export * from "./MarginNote/index.js";
 export * from "./OverlayMenu/index.js";
+export * from "./PostCard/index.js";
 
