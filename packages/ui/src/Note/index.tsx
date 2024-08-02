@@ -2,7 +2,9 @@ import { cn } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
 interface NoteProps {
+  /** Text inside note. That param can save paragraphs */
   content: string[];
+  /** Color of note */
   color?:
     | "default"
     | "red"
@@ -41,7 +43,8 @@ const variants = cva(
   },
 );
 
-const Note = ({ content, color }: NoteProps) => {
+/** Note of post */
+export const Note = ({ content, color }: NoteProps) => {
   return (
     <div className={cn(variants({ color }))}>
       {content.map((line, index) => (
@@ -52,5 +55,3 @@ const Note = ({ content, color }: NoteProps) => {
     </div>
   );
 };
-
-export default Note;

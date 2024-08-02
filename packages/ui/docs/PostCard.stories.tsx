@@ -1,6 +1,7 @@
-import PostCard from "#PostCard";
-import Tag from "#Tag";
+import { PostCard } from "#PostCard/index.js";
+import { Tag } from "#Tag/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof PostCard> = {
   component: PostCard,

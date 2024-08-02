@@ -1,4 +1,4 @@
-import PostMenu from "#PostMenu";
+import { PostMenu } from "#PostMenu/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof PostMenu> = {

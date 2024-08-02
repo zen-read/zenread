@@ -1,10 +1,13 @@
 import Bookmark from "#Icons/mid/Bookmark.js";
 
 interface NamedBookmarkProps {
+  /** Text inside bookmark */
   title: string;
+  /** Action to navigate to place where bookmark placed */
   onClick: () => void;
 }
 
+/** Named bookmark for special place inside of saved post */
 const NamedBookmark = ({ title, onClick }: NamedBookmarkProps) => {
   return (
     <div

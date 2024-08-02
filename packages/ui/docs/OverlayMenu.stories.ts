@@ -1,4 +1,4 @@
-import OverlayMenu from "#OverlayMenu";
+import { OverlayMenu } from "#OverlayMenu/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof OverlayMenu> = {
@@ -10,14 +10,12 @@ type Story = StoryObj<typeof OverlayMenu>;
 
 export const Default: Story = {
   args: {
-    active: 0,
     opened: true,
   },
 };
 
 export const Closed: Story = {
   args: {
-    active: 0,
     opened: false,
   },
 };

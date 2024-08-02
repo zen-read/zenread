@@ -1,23 +1,34 @@
-import Tag from "#Tag/index.js";
+import { Tag } from "#Tag/index.js";
 import { cn, formatDate } from "@zenread/shared";
 import { OriginLogo } from "../OriginLogo/index.js";
 
 interface PostCardProps {
+  /** Article main image */
   backgroundImage?: string;
+  /** Title of article */
   header: string;
+  /** Date of publish or last edit */
   date: Date;
+  /** Link to origin inside app */
+  originUrl: string;
+  /** Origin logo image */
   originLogo: string;
+  /** Post tags if post is saved yet */
   tags?: JSX.Element[];
+  /** Is content loaded */
   loaded: boolean;
+  /** Link to full page of article */
   href?: string;
 }
 
+/** Post card for origin, main or read list page */
 export const PostCard = ({
   backgroundImage,
   header,
   date,
   originLogo,
   tags,
+  originUrl,
   loaded,
   href,
 }: PostCardProps) => {
@@ -46,7 +57,12 @@ export const PostCard = ({
           <div className="w-0 h-[140px]"></div>
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-4">
-              <OriginLogo loaded={loaded} imageUrl={originLogo} size="M" />
+              <OriginLogo
+                link={originUrl}
+                loaded={loaded}
+                imageUrl={originLogo}
+                size="M"
+              />
               {loaded ? (
                 <span className="font-date flex items-center text-white">
                   {formatDate(new Date(date))}

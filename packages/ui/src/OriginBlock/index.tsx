@@ -7,15 +7,22 @@ import { OriginLogo } from "#OriginLogo/index.js";
 import { useState } from "react";
 
 interface OriginBlockProps {
+  /** Logo of origin */
   originLogo: string;
+  /** Origin name */
   originName: string;
+  /** Is that origin saved in favorites? */
   isSaved: boolean;
+  /** About origin */
   description: string;
+  /** Links for official site/pages of origin */
   links: LinkProps[];
+  /** Is info loaded? */
   loaded: boolean;
 }
 
-const OriginBlock = ({
+/** Information block of origin */
+export const OriginBlock = ({
   originLogo,
   originName,
   isSaved,
@@ -29,6 +36,7 @@ const OriginBlock = ({
     <div className="relative w-full">
       <div className="relative z-10 flex w-full items-center justify-between rounded border border-black bg-white px-6 py-4">
         <OriginLogo
+          link=""
           size="XL"
           loaded={loaded}
           imageUrl={originLogo}
@@ -65,5 +73,3 @@ const OriginBlock = ({
     </div>
   );
 };
-
-export default OriginBlock;

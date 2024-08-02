@@ -1,5 +1,6 @@
-import { BookmarkBreak } from "#BookmarkBreak";
+import { BookmarkBreak } from "#BookmarkBreak/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof BookmarkBreak> = {
   component: BookmarkBreak,

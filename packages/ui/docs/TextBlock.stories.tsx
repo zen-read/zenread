@@ -1,5 +1,6 @@
-import TextBlock from "#TextBlock";
+import { TextBlock } from "#TextBlock/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof TextBlock> = {
   component: TextBlock,

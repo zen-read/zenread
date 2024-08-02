@@ -1,5 +1,6 @@
-import { MarginNoteBlock } from "#MarginNote";
+import { MarginNoteBlock } from "#MarginNote/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof MarginNoteBlock> = {
   title: "Bookmarks/Margin Note",

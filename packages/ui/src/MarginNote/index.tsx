@@ -3,8 +3,11 @@ import { cn } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
 interface MarginNote {
+  /** Action to navigate to place with note inside post */
   onClick?: () => void;
+  /** Text inside note */
   content: string[];
+  /** What color of note */
   color?:
     | "default"
     | "red"
@@ -38,7 +41,8 @@ const variants = cva(["flex gap-4 p-4 rounded cursor-pointer"], {
   },
 });
 
-const MarginNoteBlock = ({ color, content, onClick }: MarginNote) => {
+/** Note in fixed place inside of saved post */
+export const MarginNoteBlock = ({ color, content, onClick }: MarginNote) => {
   return (
     <div onClick={onClick} className={cn(variants({ color }))}>
       <MarginNote className="shrink-0" />
@@ -52,5 +56,3 @@ const MarginNoteBlock = ({ color, content, onClick }: MarginNote) => {
 };
 
 MarginNoteBlock.displayName = "MarginNoteBlock";
-
-export { MarginNoteBlock as MarginNoteBlock };

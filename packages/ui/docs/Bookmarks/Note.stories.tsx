@@ -1,5 +1,6 @@
-import Note from "#Note";
+import { Note } from "#Note/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof Note> = {
   title: "Bookmarks/Note",

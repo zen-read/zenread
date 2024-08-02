@@ -1,13 +1,23 @@
 import { cn } from "@zenread/shared";
 
 interface ButtonParams {
+  /** Name of button */
   label?: string;
+  /** Icon for recognizing */
   icon: JSX.Element;
+  /** Class name param for Tailwind styles */
   className?: string;
+  /** Action on click */
   onClick?: () => void;
 }
 
-const SelectButton = ({ label, icon, className, onClick }: ButtonParams) => {
+/** Select button component from placing inside a container */
+export const SelectButton = ({
+  label,
+  icon,
+  className,
+  onClick,
+}: ButtonParams) => {
   return (
     <button
       className={cn(
@@ -21,5 +31,3 @@ const SelectButton = ({ label, icon, className, onClick }: ButtonParams) => {
     </button>
   );
 };
-
-export default SelectButton;

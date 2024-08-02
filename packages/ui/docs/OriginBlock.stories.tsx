@@ -1,4 +1,6 @@
-import OriginBlock from "#OriginBlock";
+import { OriginBlock } from "#OriginBlock/index.js";
+import React from "react";
+
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof OriginBlock> = {

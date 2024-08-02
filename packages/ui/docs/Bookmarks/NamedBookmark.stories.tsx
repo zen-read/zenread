@@ -1,5 +1,6 @@
-import { NamedBookmark } from "#NamedBookmark";
+import { NamedBookmark } from "#NamedBookmark/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof NamedBookmark> = {
   title: "Bookmarks/Named Bookmark",

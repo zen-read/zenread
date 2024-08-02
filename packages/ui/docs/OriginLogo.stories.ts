@@ -1,4 +1,4 @@
-import OriginLogo from "#OriginLogo";
+import { OriginLogo } from "#OriginLogo/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof OriginLogo> = {

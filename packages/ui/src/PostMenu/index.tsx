@@ -5,13 +5,18 @@ import HeartOutline from "#Icons/mid/HeartOutline.js";
 import List from "#Icons/mid/List.js";
 
 interface PostMenuParams {
+  /** Is post placed in "Read list" yet */
   isSavedPost: boolean;
+  /** Function to toggle status of saving. If post is saved menu will have button for toggling bookmark overlay */
   saveFn: () => void;
+  /** Toggle for content overlay */
   listFn: () => void;
+  /** Toggle bookmark overlay */
   bookmarkFn: () => void;
 }
 
-const PostMenu = ({
+/** Post menu for managing reading post */
+export const PostMenu = ({
   isSavedPost,
   saveFn,
   listFn,
@@ -42,5 +47,3 @@ const PostMenu = ({
     </div>
   );
 };
-
-export default PostMenu;

@@ -1,4 +1,4 @@
-import { Logo } from "#Logo";
+import { Logo } from "#Logo/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Logo> = {

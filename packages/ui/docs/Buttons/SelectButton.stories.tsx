@@ -1,6 +1,7 @@
 import User from "#Icons/mid/User";
-import SelectButton from "#SelectButton";
+import { SelectButton } from "#SelectButton/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof SelectButton> = {
   title: "Buttons/Select",

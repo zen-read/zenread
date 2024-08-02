@@ -1,11 +1,14 @@
 import Quote from "#Icons/mid/Quote.js";
 
 interface QuoteBookmarkProps {
+  /** Non-editable text inside block */
   title: string;
+  /** Action to navigate to quote inside article */
   onClick: () => void;
 }
 
-const QuoteBookmark = ({ title, onClick }: QuoteBookmarkProps) => {
+/** Non-editable quote bookmark */
+export const QuoteBookmark = ({ title, onClick }: QuoteBookmarkProps) => {
   return (
     <div
       onClick={onClick}
@@ -16,5 +19,3 @@ const QuoteBookmark = ({ title, onClick }: QuoteBookmarkProps) => {
     </div>
   );
 };
-
-export default QuoteBookmark;

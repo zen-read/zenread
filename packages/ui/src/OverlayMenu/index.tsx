@@ -7,13 +7,17 @@ import { Logo } from "#Logo/index.js";
 import { useState } from "react";
 
 interface OverlayMenuProps {
-  active?: number;
+  /** Is that menu opened? */
   opened: boolean;
+  /** Function for redirect to "Read list" page */
   readListFn?: () => void;
+  /** Switch dark/light mode */
   darkModeFn?: () => void;
+  /** Function for opening settings overlay */
   paramsFn?: () => void;
 }
 
+/** Header of app. Use in every page. */
 export const OverlayMenu = ({
   opened,
   readListFn,

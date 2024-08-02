@@ -2,8 +2,13 @@ import { cn } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
 interface TagProps {
+  /** Name of tag */
   label?: string;
+  /** Emoji icon */
   icon?: string;
+  /** Link to "Read list" page w/ filter by this tag */
+  link?: string;
+  /** Color of tag */
   color:
     | "black"
     | "white"
@@ -44,13 +49,12 @@ const variants = cva(
   },
 );
 
-const Tag = ({ label, icon, color }: TagProps) => {
+/** Tag link for using inside "Read list" page and */
+export const Tag = ({ label, icon, color, link }: TagProps) => {
   return (
-    <div className={cn(variants({ color }))}>
+    <a href={link} className={cn(variants({ color }))}>
       {color !== "loading" && <div>{label}</div>}
       {icon && <div>{icon}</div>}
-    </div>
+    </a>
   );
 };
-
-export default Tag;

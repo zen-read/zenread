@@ -1,5 +1,6 @@
-import { BookmarksOverlay } from "#BookmarksOverlay";
+import { BookmarksOverlay } from "#BookmarksOverlay/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof BookmarksOverlay> = {
   title: "Bookmarks/Overlay",

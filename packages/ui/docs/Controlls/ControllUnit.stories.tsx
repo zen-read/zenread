@@ -1,6 +1,7 @@
-import { ControllUnit } from "#ControllUnit";
-import Toggle from "#Toggle";
+import { ControllUnit } from "#ControllUnit/index.js";
+import { Toggle } from "#Toggle/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta: Meta<typeof ControllUnit> = {
   title: "Controlls/Controll Unit",

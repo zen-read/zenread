@@ -1,14 +1,20 @@
 import { cn } from "@zenread/shared";
 
 interface LogoProps {
+  /** Class name prop for Tailwind styles */
   className?: string;
+  /** Default logo will have a name. Small won't */
   type: "default" | "small";
+  /** Color of logo */
   color?: string;
+  /** Width */
   width?: number;
+  /** Height */
   height?: number;
 }
 
-const Logo = ({ className, type, color }: LogoProps) => {
+/** Universal logo in vector format */
+export const Logo = ({ className, type, color }: LogoProps) => {
   return (
     <div
       className={cn(
@@ -70,4 +76,3 @@ const Logo = ({ className, type, color }: LogoProps) => {
 };
 
 Logo.displayName = "Logo";
-export { Logo as Logo };

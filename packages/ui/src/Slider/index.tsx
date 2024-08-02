@@ -1,11 +1,16 @@
 interface SliderProps {
+  /** Optional name of slider */
   label?: string;
+  /** Default value */
   value: number;
+  /** Min value */
   min?: number;
+  /** Max value */
   max?: number;
 }
 
-const Slider = ({ label, value, min, max }: SliderProps) => {
+/** Slider control */
+export const Slider = ({ label, value, min, max }: SliderProps) => {
   return (
     <label htmlFor="slider" className="flex items-center gap-4">
       <span className="font-bold">{label}</span>
@@ -20,5 +25,3 @@ const Slider = ({ label, value, min, max }: SliderProps) => {
     </label>
   );
 };
-
-export default Slider;

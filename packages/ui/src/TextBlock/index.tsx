@@ -2,8 +2,11 @@ import { TextBlockType } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
 interface TextBlockProps {
+  /** What type of block we are need to show? */
   type: TextBlockType["type"];
+  /** Content of that block */
   children: React.ReactNode;
+  /** Is content loaded? */
   loaded?: boolean;
 }
 
@@ -24,6 +27,7 @@ const variants = cva(["first:pt-0"], {
   },
 });
 
+/** Universal content block for article  */
 export const TextBlock = ({ type, children, loaded }: TextBlockProps) => {
   const BlockTag = `${type}` as keyof JSX.IntrinsicElements;
 

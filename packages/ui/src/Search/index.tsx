@@ -4,8 +4,11 @@ import { cva } from "class-variance-authority";
 import { useRef } from "react";
 
 interface InputProps {
+  /** Have input border? */
   type: "outline" | "transparent";
+  /** Default value */
   value?: string;
+  /** Placeholder text */
   placeholder?: string;
 }
 
@@ -28,6 +31,7 @@ const variants = cva(
   },
 );
 
+/** Universal input for searching */
 export const SearchInput = ({ type, value, placeholder }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
