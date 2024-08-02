@@ -1,0 +1,12 @@
+{
+  "extends": "@zenread/tsconfig/reactLib.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#*": ["./src/*"]
+    },
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules"]
+}

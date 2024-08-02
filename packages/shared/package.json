@@ -1,0 +1,29 @@
+{
+  "name": "@zenread/shared",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    "./src": "./src/index.ts",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "devDependencies": {
+    "clsx": "^2.1.1",
+    "@zenread/tsconfig": "workspace:*",
+    "typescript": "^5.5.3",
+    "tailwind-merge": "^2.4.0"
+  }
+}
