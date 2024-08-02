@@ -1,7 +1,7 @@
-import Header from "../components/Header.js";
+import BodyWrapper from "../components/BodyWrapper.js";
 
 const Index = () => {
-  return <Header />;
+  return <BodyWrapper fullWidth={false}>Index</BodyWrapper>;
 };
 
 export default Index;
