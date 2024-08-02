@@ -1,6 +1,6 @@
-import Bottom from "#Icons/small/Bottom";
-import Check from "#Icons/small/Check";
-import Top from "#Icons/small/Top";
+import Bottom from "#Icons/small/Bottom.js";
+import Check from "#Icons/small/Check.js";
+import Top from "#Icons/small/Top.js";
 import { useState } from "react";
 
 interface DropdownMenuProps {

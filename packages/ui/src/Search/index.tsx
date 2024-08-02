@@ -1,5 +1,5 @@
-import Search from "#Icons/small/Search";
-import { cn } from "#utils";
+import Search from "#Icons/small/Search.js";
+import { cn } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 import { useRef } from "react";
 

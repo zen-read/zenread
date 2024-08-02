@@ -1,4 +1,4 @@
-import Quote from "#Icons/mid/Quote";
+import Quote from "#Icons/mid/Quote.js";
 
 interface QuoteBookmarkProps {
   title: string;

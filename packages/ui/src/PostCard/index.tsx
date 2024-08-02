@@ -1,6 +1,6 @@
-import OriginLogo from "#OriginLogo";
-import Tag from "#Tag";
-import { cn, formatDate } from "#utils";
+import OriginLogo from "#OriginLogo/index.js";
+import Tag from "#Tag/index.js";
+import { cn, formatDate } from "@zenread/shared";
 
 interface PostCardProps {
   backgroundImage?: string;

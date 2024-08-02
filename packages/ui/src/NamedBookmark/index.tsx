@@ -1,4 +1,4 @@
-import Bookmark from "#Icons/mid/Bookmark";
+import Bookmark from "#Icons/mid/Bookmark.js";
 
 interface NamedBookmarkProps {
   title: string;

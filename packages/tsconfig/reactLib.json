@@ -4,8 +4,13 @@
   "extends": "./base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": ["ES2023", "DOM"],
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
     "module": "NodeNext",
-    "target": "ESNext"
+    "jsxImportSource": "react",
+    "target": "ESNext",
+    "noImplicitAny": false,
   }
 }

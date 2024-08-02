@@ -1,8 +1,8 @@
-import { Button } from "#Button";
-import Bookmark from "#Icons/mid/Bookmark";
-import Heart from "#Icons/mid/Heart";
-import HeartOutline from "#Icons/mid/HeartOutline";
-import List from "#Icons/mid/List";
+import { Button } from "#Button/index.js";
+import Bookmark from "#Icons/mid/Bookmark.js";
+import Heart from "#Icons/mid/Heart.js";
+import HeartOutline from "#Icons/mid/HeartOutline.js";
+import List from "#Icons/mid/List.js";
 
 interface PostMenuParams {
   isSavedPost: boolean;

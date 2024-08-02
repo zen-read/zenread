@@ -1,4 +1,4 @@
-import { cn } from "#utils";
+import { cn } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
 interface ButtonParams {

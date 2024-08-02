@@ -1,9 +1,9 @@
-import { Button } from "#Button";
-import Heart from "#Icons/mid/Heart";
-import HeartOutline from "#Icons/mid/HeartOutline";
-import Info from "#Icons/mid/Info";
-import { LinkButton, LinkProps } from "#Link";
-import OriginLogo from "#OriginLogo";
+import { Button } from "#Button/index.js";
+import Heart from "#Icons/mid/Heart.js";
+import HeartOutline from "#Icons/mid/HeartOutline.js";
+import Info from "#Icons/mid/Info.js";
+import { LinkButton, LinkProps } from "#Link/index.js";
+import OriginLogo from "#OriginLogo/index.js";
 import { useState } from "react";
 
 interface OriginBlockProps {

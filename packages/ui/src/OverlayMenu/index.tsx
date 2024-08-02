@@ -1,20 +1,20 @@
-import { Button } from "#Button";
-import Left from "#Icons/mid/Left";
-import Params from "#Icons/mid/Params";
-import Right from "#Icons/mid/Right";
-import Sun from "#Icons/mid/Sun";
-import { Logo } from "#Logo";
+import { Button } from "#Button/index.js";
+import Left from "#Icons/mid/Left.js";
+import Params from "#Icons/mid/Params.js";
+import Right from "#Icons/mid/Right.js";
+import Sun from "#Icons/mid/Sun.js";
+import { Logo } from "#Logo/index.js";
 import { useState } from "react";
 
 interface OverlayMenuProps {
-  active: number;
+  active?: number;
   opened: boolean;
   readListFn?: () => void;
   darkModeFn?: () => void;
   paramsFn?: () => void;
 }
 
-const OverlayMenu = ({
+export const OverlayMenu = ({
   opened,
   readListFn,
   darkModeFn,
@@ -57,5 +57,3 @@ const OverlayMenu = ({
     </div>
   );
 };
-
-export default OverlayMenu;

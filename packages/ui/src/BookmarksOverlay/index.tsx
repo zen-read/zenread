@@ -1,6 +1,6 @@
-import { Button } from "#Button";
-import Close from "#Icons/mid/Close";
-import { cn } from "#utils";
+import { Button } from "#Button/index.js";
+import Close from "#Icons/mid/Close.js";
+import { cn } from "@zenread/shared";
 
 interface BookmarksOverlayProps {
   /** Some bookmarks */

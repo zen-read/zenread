@@ -1,4 +1,4 @@
-import { cn } from "#utils";
+import { cn } from "@zenread/shared";
 
 interface ButtonParams {
   label?: string;

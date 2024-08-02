@@ -1,5 +1,5 @@
-import MarginNote from "#Icons/small/MarginNote";
-import { cn } from "#utils";
+import MarginNote from "#Icons/small/MarginNote.js";
+import { cn } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
 interface MarginNote {

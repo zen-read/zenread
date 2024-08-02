@@ -1,4 +1,4 @@
-import Link from "#Icons/small/Link";
+import Link from "#Icons/small/Link.js";
 
 export interface LinkProps {
   /** Title of link */
