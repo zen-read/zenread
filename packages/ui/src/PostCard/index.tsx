@@ -11,7 +11,7 @@ interface PostCardProps {
   loaded: boolean;
 }
 
-const PostCard = ({
+export const PostCard = ({
   backgroundImage,
   header,
   date,
@@ -23,7 +23,7 @@ const PostCard = ({
     <div className="relative overflow-hidden rounded-md">
       <div
         className={cn(
-          "relative z-10 flex w-full flex-col gap-[140px] p-6",
+          "relative z-10 flex w-full flex-col p-6",
           "bg-gradient-to-b from-transparent to-full-black-25%",
           loaded === false && "animate-pulse",
         )}
@@ -40,6 +40,7 @@ const PostCard = ({
             )}
           </>
         )}
+        <div className="w-0 h-[140px]"></div>
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-4">
             <OriginLogo loaded={loaded} imageUrl={originLogo} size="M" />
@@ -68,5 +69,3 @@ const PostCard = ({
     </div>
   );
 };
-
-export default PostCard;
