@@ -8,7 +8,7 @@ interface OriginLogoProps {
   loaded: boolean;
 }
 
-const OriginLogo = ({
+export const OriginLogo = ({
   imageUrl,
   label,
   size,
@@ -51,5 +51,3 @@ const OriginLogo = ({
     </div>
   );
 };
-
-export default OriginLogo;
