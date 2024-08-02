@@ -196,7 +196,3 @@
   --pink-50: rgba(238, 72, 191, 0.5);
   --pink-25: rgba(238, 72, 191, 0.25);
 }
-
-body {
-  background-color: var(--white);
-}
