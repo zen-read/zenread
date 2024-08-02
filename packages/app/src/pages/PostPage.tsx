@@ -1,8 +1,8 @@
-import { formatDate } from "@zenread/shared";
-import { Button, OriginLogo } from "@zenread/ui";
+import { formatDate, TextBlockType } from "@zenread/shared";
+import { Button, OriginLogo, TextBlock } from "@zenread/ui";
 import BodyWrapper from "../components/BodyWrapper.js";
 
-const templateData = {
+const templateData: TemplateDataType = {
   cover: "https://i1.sndcdn.com/artworks-oGvaMt0dsBWPL7WZ-qgbAMA-t500x500.jpg",
   originName: "Maxwell.com",
   originLogo:
@@ -14,7 +14,45 @@ const templateData = {
       type: "h1",
       content: "gdsgsdjngnlsjngk;ldsngonsd",
     },
+    {
+      type: "h2",
+      content: "gdsgsdjngnlsjngk;ldsngonsd",
+    },
+    {
+      type: "h3",
+      content: "gdsgsdjngnlsjngk;ldsngonsd",
+    },
+    {
+      type: "h4",
+      content: "gdsgsdjngnlsjngk;ldsngonsd",
+    },
+    {
+      type: "h5",
+      content: "gdsgsdjngnlsjngk;ldsngonsd",
+    },
+    {
+      type: "h6",
+      content: "gdsgsdjngnlsjngk;ldsngonsd",
+    },
+    {
+      type: "p",
+      content: "gdsgsdjngnlsjngk;ldsngonsd",
+    },
   ],
+};
+
+interface TemplateDataType {
+  cover: string;
+  originName: string;
+  originLogo: string;
+  dateOfPublish: Date;
+  title: string;
+  content: ContentType[];
+}
+
+type ContentType = {
+  type: TextBlockType["type"];
+  content: string;
 };
 
 const PostPage = () => {
@@ -45,7 +83,13 @@ const PostPage = () => {
       </div>
       <h1 className="mt-5 font-bold text-[40px]">{templateData.title}</h1>
       <div className="w-full flex justify-center mt-10">
-        <div className="w-[500px]">Content</div>
+        <div className="w-[700px]">
+          {templateData.content.map((item, index) => (
+            <TextBlock key={index} type={item.type} loaded>
+              {item.content}
+            </TextBlock>
+          ))}
+        </div>
       </div>
     </BodyWrapper>
   );

@@ -11,4 +11,5 @@ export * from "./MarginNote/index.js";
 export * from "./OriginLogo/index.js";
 export * from "./OverlayMenu/index.js";
 export * from "./PostCard/index.js";
+export * from "./TextBlock/index.js";
 
