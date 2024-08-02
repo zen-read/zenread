@@ -3,7 +3,7 @@ import Heart from "#Icons/mid/Heart.js";
 import HeartOutline from "#Icons/mid/HeartOutline.js";
 import Info from "#Icons/mid/Info.js";
 import { LinkButton, LinkProps } from "#Link/index.js";
-import OriginLogo from "#OriginLogo/index.js";
+import { OriginLogo } from "#OriginLogo/index.js";
 import { useState } from "react";
 
 interface OriginBlockProps {
