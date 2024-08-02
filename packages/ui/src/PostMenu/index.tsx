@@ -23,7 +23,7 @@ export const PostMenu = ({
   bookmarkFn,
 }: PostMenuParams) => {
   return (
-    <div className="flex items-center gap-4 rounded-md border border-black px-5 py-4">
+    <div className="flex items-center gap-4 rounded-md border border-black px-5 py-4 bg-white">
       <Button
         onClick={saveFn}
         size="small"
