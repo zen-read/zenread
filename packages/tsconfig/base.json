@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "Node16",
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "pretty": true,
+    "removeComments": true,
+    "strict": true,
+    "module": "ESNext",
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "dist"]
+}
