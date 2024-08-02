@@ -22,7 +22,7 @@ export const OverlayMenu = ({
 }: OverlayMenuProps) => {
   const [isOpened, setIsOpened] = useState(opened);
   return (
-    <div className="flex items-center gap-4 rounded border border-black p-3">
+    <div className="flex items-center gap-4 rounded border border-black p-3 bg-white">
       <Logo type="small" className="ml-4 h-[30px]" />
       <div className="flex items-center">
         {isOpened && (
