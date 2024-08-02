@@ -10,6 +10,7 @@ const templateData = [
     originLogo:
       "https://m.media-amazon.com/images/I/31+8EYj8ZdL._UXNaN_FMjpg_QL85_.jpg",
     loaded: true,
+    href: "/post",
   },
   {
     backgroundImage:
@@ -19,6 +20,7 @@ const templateData = [
     originLogo:
       "https://m.media-amazon.com/images/I/31+8EYj8ZdL._UXNaN_FMjpg_QL85_.jpg",
     loaded: true,
+    href: "/post",
   },
 ];
 
