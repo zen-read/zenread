@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./pages/Index.js";
 import OriginPage from "./pages/OriginPage.js";
 import PostPage from "./pages/PostPage.js";
+import ReadList from "./pages/ReadList.js";
 import "./styles.css";
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/origin",
     element: <OriginPage />,
+  },
+  {
+    path: "/readlist",
+    element: <ReadList />,
   },
 ]);
 

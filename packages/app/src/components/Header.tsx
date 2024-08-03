@@ -3,7 +3,7 @@ import { OverlayMenu } from "@zenread/ui";
 const Header = () => {
   return (
     <div className="fixed top-6 left-6">
-      <OverlayMenu opened />
+      <OverlayMenu readListUrl="/readlist" opened />
     </div>
   );
 };
