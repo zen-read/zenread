@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./pages/Index.js";
+import OriginPage from "./pages/OriginPage.js";
 import PostPage from "./pages/PostPage.js";
 import "./styles.css";
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/post",
     element: <PostPage />,
+  },
+  {
+    path: "/origin",
+    element: <OriginPage />,
   },
 ]);
 

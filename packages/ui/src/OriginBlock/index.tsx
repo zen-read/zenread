@@ -4,6 +4,7 @@ import HeartOutline from "#Icons/mid/HeartOutline.js";
 import Info from "#Icons/mid/Info.js";
 import { LinkButton, LinkProps } from "#Link/index.js";
 import { OriginLogo } from "#OriginLogo/index.js";
+import { cn } from "@zenread/shared";
 import { useState } from "react";
 
 interface OriginBlockProps {
@@ -19,6 +20,8 @@ interface OriginBlockProps {
   links: LinkProps[];
   /** Is info loaded? */
   loaded: boolean;
+  /** Classes for Tailwind styling */
+  className?: string;
 }
 
 /** Information block of origin */
@@ -29,11 +32,12 @@ export const OriginBlock = ({
   description,
   links,
   loaded,
+  className,
 }: OriginBlockProps) => {
-  const [opened, setOpened] = useState(true);
+  const [opened, setOpened] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <div className={cn("relative w-full", className)}>
       <div className="relative z-10 flex w-full items-center justify-between rounded border border-black bg-white px-6 py-4">
         <OriginLogo
           link=""

@@ -69,7 +69,7 @@ const PostPage = () => {
         <div className="flex justify-between mt-6">
           <div className="flex gap-4 items-center">
             <OriginLogo
-              link=""
+              link="/origin"
               label={templateData.originName}
               imageUrl={templateData.originLogo}
               size="L"
