@@ -14,7 +14,7 @@ That app is separated into 5 parts in `packages` directory:
 ### Installation
 
 ```bash
-git clone https://github.com/zenread/zenread.git
+git clone https://github.com/zen-read/zenread.git
 cd zenread
 pnpm install
 pnpm run tauri dev
