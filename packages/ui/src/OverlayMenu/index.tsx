@@ -10,7 +10,7 @@ interface OverlayMenuProps {
   /** Is that menu opened? */
   opened: boolean;
   /** Function for redirect to "Read list" page */
-  readListFn?: () => void;
+  readListUrl?: string;
   /** Switch dark/light mode */
   darkModeFn?: () => void;
   /** Function for opening settings overlay */
@@ -20,7 +20,7 @@ interface OverlayMenuProps {
 /** Header of app. Use in every page. */
 export const OverlayMenu = ({
   opened,
-  readListFn,
+  readListUrl,
   darkModeFn,
   paramsFn,
 }: OverlayMenuProps) => {
@@ -33,12 +33,9 @@ export const OverlayMenu = ({
       <div className="flex items-center">
         {isOpened && (
           <>
-            <Button
-              onClick={readListFn}
-              type="transparent"
-              size="small"
-              label="read list"
-            />
+            <a href={readListUrl}>
+              <Button type="transparent" size="small" label="read list" />
+            </a>
             <Button
               onClick={darkModeFn}
               type="transparent"
