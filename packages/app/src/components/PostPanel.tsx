@@ -1,18 +1,23 @@
 import { PostMenu } from "@zenread/ui";
 import { cn, useScrollDir } from "@zenread/shared";
 
-const PostPanel = () => {
+interface PostPanelProps {
+  isSavedPost: boolean;
+}
+
+const PostPanel = ({ isSavedPost }: PostPanelProps) => {
   const scrollDir = useScrollDir();
 
   return (
     <div
       className={cn(
-        "fixed w-screen h-screen flex justify-center items-end pb-6 pointer-events-none transition-transform ease-in-out",
+        "fixed w-[1025px] bottom-0 flex justify-center items-end pb-6 transition-transform ease-in-out",
         scrollDir === "down" && "translate-y-[74px]",
       )}
     >
       <PostMenu
-        isSavedPost
+        className="z-10"
+        isSavedPost={isSavedPost}
         saveFn={() => {}}
         listFn={() => {}}
         bookmarkFn={() => {}}

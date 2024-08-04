@@ -2,6 +2,7 @@ import { formatDate, TextBlockType } from "@zenread/shared";
 import { Button, OriginLogo, TextBlock } from "@zenread/ui";
 import BodyWrapper from "../components/BodyWrapper.js";
 import PostPanel from "../components/PostPanel.js";
+import { Heart, HeartOutline, Origin } from "@zenread/ui/icons/mid/index.js";
 
 const templateData: TemplateDataType = {
   cover: "https://i1.sndcdn.com/artworks-oGvaMt0dsBWPL7WZ-qgbAMA-t500x500.jpg",
@@ -10,6 +11,7 @@ const templateData: TemplateDataType = {
     "https://m.media-amazon.com/images/I/31+8EYj8ZdL._UXNaN_FMjpg_QL85_.jpg",
   dateOfPublish: new Date(),
   title: "Title",
+  saved: false,
   content: [
     {
       type: "h1",
@@ -47,6 +49,7 @@ interface TemplateDataType {
   originName: string;
   originLogo: string;
   dateOfPublish: Date;
+  saved: boolean;
   title: string;
   content: ContentType[];
 }
@@ -59,8 +62,8 @@ type ContentType = {
 const PostPage = () => {
   return (
     <>
-      <PostPanel />
       <BodyWrapper fullWidth={false}>
+        <PostPanel isSavedPost={templateData.saved} />
         <img
           className="w-full h-[400px] rounded-lg object-cover"
           src={templateData.cover}
@@ -82,7 +85,22 @@ const PostPage = () => {
             </span>
           </div>
           <div className="flex gap-3">
-            <Button label="Share" type="transparent" size="small" />
+            <Button
+              icon={<Origin className="filterColor-secondary" />}
+              type="transparent"
+              size="small"
+            />
+            <Button
+              icon={
+                templateData.saved ? (
+                  <Heart className="filterColor-secondary" />
+                ) : (
+                  <HeartOutline className="filterColor-secondary" />
+                )
+              }
+              type="transparent"
+              size="small"
+            />
           </div>
         </div>
         <h1 className="mt-5 font-bold text-[40px]">{templateData.title}</h1>
