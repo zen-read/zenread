@@ -49,6 +49,7 @@ export const OriginBlock = ({
         />
         <div className="flex gap-3">
           <Button
+            title={isSaved ? "Unsave from read list" : "Save to read list"}
             size="small"
             type="transparent"
             icon={
@@ -60,6 +61,7 @@ export const OriginBlock = ({
             }
           />
           <Button
+            title={`Show info about ${originName}`}
             onClick={() => setOpened(!opened)}
             size="small"
             type={opened ? "full" : "transparent"}

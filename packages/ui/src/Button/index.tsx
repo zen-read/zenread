@@ -14,6 +14,8 @@ interface ButtonParams {
   icon?: JSX.Element;
   /** Classes for styling by Tailwind */
   className?: string;
+  /** Hover title */
+  title?: string;
   /** Action on click */
   onClick?: () => void;
 }
@@ -53,10 +55,12 @@ export const Button = ({
   size,
   icon,
   className,
+  title,
   onClick,
 }: ButtonParams) => {
   return (
     <button
+      title={title ?? label}
       onClick={onClick}
       disabled={disabled}
       className={cn(variants({ type, size }), className)}

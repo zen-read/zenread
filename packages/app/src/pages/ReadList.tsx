@@ -62,6 +62,7 @@ const ReadList = () => {
         <div className="sticky">
           <div className="flex gap-3">
             <Button
+              title="Show filters"
               type="transparent"
               size="small"
               icon={<Filter className="filterColor-secondary" />}

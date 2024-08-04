@@ -30,9 +30,10 @@ export const OverlayMenu = ({
         {isOpened && (
           <>
             <a href={readListUrl}>
-              <Button type="transparent" size="small" label="read list" />
+              <Button type="transparent" size="small" label="Read list" />
             </a>
             <Button
+              title="Open settings panel"
               onClick={paramsFn}
               type="transparent"
               size="small"
@@ -44,6 +45,7 @@ export const OverlayMenu = ({
           onClick={() => setIsOpened(!isOpened)}
           type="transparent"
           size="small"
+          title={isOpened ? "Swap menu" : "Open menu"}
           icon={
             isOpened ? (
               <Left className="filterColor-secondary" />

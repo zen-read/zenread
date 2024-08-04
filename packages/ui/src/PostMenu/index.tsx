@@ -25,6 +25,7 @@ export const PostMenu = ({
   return (
     <div className="flex items-center gap-4 rounded-md border border-secondary px-5 py-4 bg-primary">
       <Button
+        title={isSavedPost ? "Unsave from read list" : "Save to read list"}
         onClick={saveFn}
         size="small"
         type="transparent"
@@ -37,6 +38,7 @@ export const PostMenu = ({
         }
       />
       <Button
+        title="Show content of post"
         onClick={listFn}
         size="small"
         type="transparent"
@@ -44,6 +46,7 @@ export const PostMenu = ({
       />
       {isSavedPost && (
         <Button
+          title="Open bookmarks of the post"
           onClick={bookmarkFn}
           size="small"
           type="transparent"

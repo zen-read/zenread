@@ -1,8 +1,8 @@
 import { formatDate, TextBlockType } from "@zenread/shared";
 import { Button, OriginLogo, TextBlock } from "@zenread/ui";
+import { Heart, HeartOutline, Origin } from "@zenread/ui/icons/mid/index.js";
 import BodyWrapper from "../components/BodyWrapper.js";
 import PostPanel from "../components/PostPanel.js";
-import { Heart, HeartOutline, Origin } from "@zenread/ui/icons/mid/index.js";
 
 const templateData: TemplateDataType = {
   cover: "https://i1.sndcdn.com/artworks-oGvaMt0dsBWPL7WZ-qgbAMA-t500x500.jpg",
@@ -86,11 +86,17 @@ const PostPage = () => {
           </div>
           <div className="flex gap-3">
             <Button
+              title="Go to original post in web"
               icon={<Origin className="filterColor-secondary" />}
               type="transparent"
               size="small"
             />
             <Button
+              title={
+                templateData.saved
+                  ? "Unsave from read list"
+                  : "Save to read list"
+              }
               icon={
                 templateData.saved ? (
                   <Heart className="filterColor-secondary" />
