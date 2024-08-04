@@ -82,10 +82,10 @@ module.exports = {
       borderRadius: {
         none: "0",
         DEFAULT: "4px",
-        md: "4px",
+        md: "8px",
         full: "9999px",
         sm: "2px",
-        xl: "8px",
+        xl: "16px",
       },
     },
   },
