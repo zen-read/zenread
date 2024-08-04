@@ -14,13 +14,13 @@ export const Toggle = forwardRef(({ active }: ToggleProps) => {
       onClick={() => setIsActive(!isActive)}
       className={cn(
         "transition-color flex h-7 w-11 cursor-pointer items-center rounded-full duration-150 ease-in-out",
-        isActive ? "bg-black" : "border border-black bg-white",
+        isActive ? "bg-secondary" : "border border-secondary bg-primary",
       )}
     >
       <div
         className={cn(
           "h-[18px] w-[18px] rounded-full transition-all duration-150 ease-in-out",
-          isActive ? "mr-2 translate-x-[27px] bg-white" : "ml-2 bg-black",
+          isActive ? "mr-2 translate-x-[27px] bg-primary" : "ml-2 bg-secondary",
         )}
       ></div>
     </div>

@@ -20,12 +20,12 @@ interface NoteProps {
 
 const variants = cva(
   [
-    "flex w-full flex-col gap-4 p-4 rounded border-dashed border border-black-75%",
+    "flex w-full flex-col gap-4 p-4 rounded border-dashed border border-secondary-75%",
   ],
   {
     variants: {
       color: {
-        default: "bg-white-25%",
+        default: "bg-primary-25%",
         red: "bg-red-25%",
         orange: "bg-orange-25%",
         yellow: "bg-yellow-25%",

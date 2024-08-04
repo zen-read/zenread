@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   mode: "jit",
   content: ["../../packages/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -58,6 +57,14 @@ module.exports = {
       "pink-50%": "var(--pink-50)",
       "pink-25%": "var(--pink-25)",
       transparent: "transparent",
+      primary: "var(--primary)",
+      "primary-75%": "var(--primary-75)",
+      "primary-50%": "var(--primary-50)",
+      "primary-25%": "var(--primary-25)",
+      secondary: "var(--secondary)",
+      "secondary-75%": "var(--secondary-75)",
+      "secondary-50%": "var(--secondary-50)",
+      "secondary-25%": "var(--secondary-25)",
     },
     fontFamily: {
       sans: ["Onest", "sans-serif"],

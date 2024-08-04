@@ -61,7 +61,11 @@ const ReadList = () => {
       <div className="mt-5 grid grid-cols-2 gap-[18px]">
         <div className="sticky">
           <div className="flex gap-3">
-            <Button type="transparent" size="small" icon={<Filter />} />
+            <Button
+              type="transparent"
+              size="small"
+              icon={<Filter className="filterColor-secondary" />}
+            />
             <SearchInput type="outline" placeholder="Search..." />
           </div>
           <div className="mt-6 inline-flex gap-4">
@@ -77,9 +81,7 @@ const ReadList = () => {
           </div>
         </div>
         <div>
-          <h4 className="text-[32px] font-semibold leading-none">
-            Recently added
-          </h4>
+          <h4 className="font-heading-4">Recently added</h4>
           <div className="mt-7 grid grid-cols-2 gap-[18px]">
             {templateArticles.map((data, index) => (
               <PostCard key={index} {...data} />

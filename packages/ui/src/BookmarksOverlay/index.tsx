@@ -15,8 +15,8 @@ interface BookmarksOverlayProps {
 const BookmarksOverlay = ({ children, opened }: BookmarksOverlayProps) => {
   return (
     <div className={cn("h-full p-6", !opened && "hidden")}>
-      <div className="h-full w-[700px] overflow-hidden rounded-md bg-white">
-        <div className="flex w-full items-center gap-5 border-b border-black p-4">
+      <div className="h-full w-[700px] overflow-hidden rounded-md bg-primary">
+        <div className="flex w-full items-center gap-5 border-b border-secondary p-4">
           <Button size="tiny" type="transparent" icon={<Close />} />
           <span className="font-heading-6">Bookmarks</span>
         </div>

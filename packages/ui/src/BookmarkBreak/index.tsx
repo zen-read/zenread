@@ -73,11 +73,11 @@ const BookmarkBreak = ({ onClick, color, title }: BookmarkBreakProps) => {
       className="flex cursor-pointer items-center gap-4 py-5"
     >
       <BookmarkBreakIcon className="w-6 shrink-0" color={color} />
-      <div className="w-full border border-dashed border-black"></div>
+      <div className="w-full border border-dashed border-secondary"></div>
       {title && (
         <>
           <span className="font-small">{title}</span>
-          <div className="w-full border border-dashed border-black"></div>
+          <div className="w-full border border-dashed border-secondary"></div>
         </>
       )}
       <BookmarkBreakIcon className="w-6 shrink-0 rotate-180" color={color} />

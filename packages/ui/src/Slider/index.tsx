@@ -15,7 +15,7 @@ export const Slider = ({ label, value, min, max }: SliderProps) => {
     <label htmlFor="slider" className="flex items-center gap-4">
       <span className="font-bold">{label}</span>
       <input
-        className="rangeSlider h-1 w-[128px] appearance-none rounded-none bg-black disabled:pointer-events-none disabled:opacity-50"
+        className="rangeSlider h-1 w-[128px] appearance-none rounded-none bg-secondary disabled:pointer-events-none disabled:opacity-50"
         type="range"
         name="slider"
         min={min ? min : 0}

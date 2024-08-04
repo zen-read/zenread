@@ -14,13 +14,13 @@ interface InputProps {
 
 const variants = cva(
   [
-    "inline-flex w-full items-center justify-start gap-4 rounded-md text-black relative",
+    "inline-flex w-full items-center justify-start gap-4 rounded-md text-secondary relative",
   ],
   {
     variants: {
       type: {
         outline:
-          "border border-black-25% hover:border-black focus-within:border-black",
+          "border border-secondary-25% hover:border-secondary focus-within:border-secondary",
         transparent:
           "border-transparent hover:bg-dust-25% focus-within:bg-dust-25%",
       },
@@ -38,14 +38,12 @@ export const SearchInput = ({ type, value, placeholder }: InputProps) => {
     <label htmlFor="searchInput" className={cn(variants({ type }))}>
       <Search
         className={cn(
-          inputRef.current === document.activeElement
-            ? "filterColor-black"
-            : "opacity-50",
-          "pointer-events-none absolute ml-6",
+          inputRef.current !== document.activeElement && "opacity-50",
+          "filterColor-secondary pointer-events-none absolute ml-6",
         )}
       />
       <input
-        className="bg-transparent pb-4 pl-10 pr-6 pt-4 placeholder-black-50% outline-none"
+        className="bg-transparent pb-4 pl-10 pr-6 pt-4 placeholder-secondary-50% outline-none"
         type="text"
         name="searchInput"
         ref={inputRef}

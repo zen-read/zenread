@@ -18,22 +18,22 @@ const DropdownMenu = ({ items, selectedItem }: DropdownMenuProps) => {
     <div className="relative w-full">
       <div
         onClick={() => setOpen(!open)}
-        className="flex w-full cursor-pointer justify-between gap-3 rounded border border-black p-4"
+        className="flex w-full cursor-pointer justify-between gap-3 rounded border border-secondary p-4"
       >
-        <span className="font-select pointer-events-none w-full text-ellipsis text-black">
+        <span className="font-select pointer-events-none w-full text-ellipsis text-secondary">
           {activeItem}
         </span>
         {open ? <Top className="shrink-0" /> : <Bottom className="shrink-0" />}
       </div>
       {open && (
-        <div className="absolute mt-3 max-h-14 w-full cursor-pointer overflow-y-scroll rounded border border-black">
+        <div className="absolute mt-3 max-h-14 w-full cursor-pointer overflow-y-scroll rounded border border-secondary">
           {items.map((item, index) => (
             <div
               key={index}
               onClick={() => setActiveItem(item)}
-              className="duration-135 flex justify-between gap-3 border-b border-black p-4 transition-colors ease-in-out last:border-none hover:bg-dust-25%"
+              className="duration-135 flex justify-between gap-3 border-b border-secondary p-4 transition-colors ease-in-out last:border-none hover:bg-dust-25%"
             >
-              <span className="font-select pointer-events-none w-full text-ellipsis text-black">
+              <span className="font-select pointer-events-none w-full text-ellipsis text-secondary">
                 {item}
               </span>
               {item === activeItem && <Check className="shrink-0" />}

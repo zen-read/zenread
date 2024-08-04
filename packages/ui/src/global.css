@@ -3,6 +3,82 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /*==========Colors==========*/
+    --full-black: #0a0a0a;
+    --full-black-75: rgba(10, 10, 10, 0.75);
+    --full-black-50: rgba(10, 10, 10, 0.5);
+    --full-black-25: rgba(10, 10, 10, 0.25);
+    --black: #141414;
+    --black-75: rgba(20, 20, 20, 0.75);
+    --black-50: rgba(20, 20, 20, 0.5);
+    --black-25: rgba(20, 20, 20, 0.25);
+    --dust: #807f7f;
+    --dust-75: rgba(128, 127, 127, 0.75);
+    --dust-50: rgba(128, 127, 127, 0.5);
+    --dust-25: rgba(128, 127, 127, 0.25);
+    --white: #ededed;
+    --white-75: rgba(237, 237, 237, 0.75);
+    --white-50: rgba(237, 237, 237, 0.5);
+    --white-25: rgba(237, 237, 237, 0.25);
+    --red: #e9422b;
+    --red-75: rgba(233, 66, 43, 0.75);
+    --red-50: rgba(233, 66, 43, 0.5);
+    --red-25: rgba(233, 66, 43, 0.2);
+    --orange: #e9922b;
+    --orange-75: rgba(233, 146, 43, 0.75);
+    --orange-50: rgba(233, 146, 43, 0.5);
+    --orange-25: rgba(233, 146, 43, 0.25);
+    --yellow: #e9d62b;
+    --yellow-75: rgba(233, 214, 43, 0.75);
+    --yellow-50: rgba(233, 214, 43, 0.5);
+    --yellow-25: rgba(233, 214, 43, 0.25);
+    --lime: #96e92b;
+    --lime-75: rgba(150, 233, 43, 0.75);
+    --lime-50: rgba(150, 233, 43, 0.5);
+    --lime-25: rgba(150, 233, 43, 0.25);
+    --mint: #28e847;
+    --mint-75: rgba(40, 232, 71, 0.75);
+    --mint-50: rgba(40, 232, 71, 0.5);
+    --mint-25: rgba(40, 232, 71, 0.25);
+    --sky: #2becd5;
+    --sky-75: rgba(43, 236, 213, 0.75);
+    --sky-50: rgba(43, 236, 213, 0.5);
+    --sky-25: rgba(43, 236, 213, 0.25);
+    --water: #2b90ec;
+    --water-75: rgba(43, 144, 236, 0.75);
+    --water-50: rgba(43, 144, 236, 0.5);
+    --water-25: rgba(43, 144, 236, 0.25);
+    --acid-blue: #2f2bec;
+    --acid-blue-75: rgba(47, 43, 236, 0.75);
+    --acid-blue-50: rgba(47, 43, 236, 0.5);
+    --acid-blue-25: rgba(47, 43, 236, 0.25);
+    --pink: #ee48bf;
+    --pink-75: rgba(238, 72, 191, 0.75);
+    --pink-50: rgba(238, 72, 191, 0.5);
+    --pink-25: rgba(238, 72, 191, 0.25);
+
+    --primary: var(--white);
+    --primary-75: var(--white-75);
+    --primary-50: var(--white-50);
+    --primary-25: var(--white-25);
+    --secondary: var(--black);
+    --secondary-75: var(--black-75);
+    --secondary-50: var(--black-50);
+    --secondary-25: var(--black-25);
+
+    @media (prefers-color-scheme: dark) {
+      --primary: var(--black);
+      --primary-75: var(--black-75);
+      --primary-50: var(--black-50);
+      --primary-25: var(--black-25);
+      --secondary: var(--white);
+      --secondary-75: var(--white-75);
+      --secondary-50: var(--white-50);
+      --secondary-25: var(--white-25);
+    }
+  }
+
   @font-face {
     font-family: "Onest";
     font-optical-sizing: auto;
@@ -13,42 +89,49 @@
 
 @layer utilities {
   .font-text {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 400;
     line-height: 125%;
     font-size: 16px;
   }
   .font-bold {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 600;
     line-height: 125%;
     font-size: 16px;
   }
   .font-accent {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 500;
     line-height: 125%;
     font-size: 16px;
   }
   .font-small {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 400;
     line-height: 125%;
     font-size: 12px;
   }
   .font-small {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 400;
     line-height: 125%;
     font-size: 12px;
   }
   .font-bold-small {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 700;
     line-height: 125%;
     font-size: 12px;
   }
   .font-button {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 600;
     line-height: 100%;
@@ -56,6 +139,7 @@
     text-transform: uppercase;
   }
   .font-button-small {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 600;
     line-height: 100%;
@@ -63,48 +147,56 @@
     text-transform: uppercase;
   }
   .font-select {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 400;
     line-height: 100%;
     font-size: 16px;
   }
   .font-heading-1 {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 700;
     line-height: 100%;
     font-size: 48px;
   }
   .font-heading-2 {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 700;
     line-height: 100%;
     font-size: 40px;
   }
   .font-heading-3 {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 700;
     line-height: 100%;
     font-size: 36px;
   }
   .font-heading-4 {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 600;
     line-height: 100%;
     font-size: 32px;
   }
   .font-heading-5 {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 600;
     line-height: 100%;
     font-size: 26px;
   }
   .font-heading-6 {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 600;
     line-height: 100%;
     font-size: 24px;
   }
   .font-date {
+    color: var(--secondary);
     font-family: "Onest", sans-serif;
     font-variation-settings: "wght" 400;
     line-height: 100%;
@@ -121,6 +213,24 @@
   .filterColor-water {
     filter: invert(48%) sepia(44%) saturate(2718%) hue-rotate(187deg)
       brightness(95%) contrast(94%);
+  }
+  .filterColor-primary {
+    filter: invert(99%) sepia(3%) saturate(61%) hue-rotate(142deg)
+      brightness(117%) contrast(86%);
+  }
+  .filterColor-secondary {
+    filter: invert(2%) sepia(4%) saturate(279%) hue-rotate(315deg)
+      brightness(91%) contrast(88%);
+  }
+  @media (prefers-color-scheme: dark) {
+    .filterColor-primary {
+      filter: invert(2%) sepia(4%) saturate(279%) hue-rotate(315deg)
+        brightness(91%) contrast(88%);
+    }
+    .filterColor-secondary {
+      filter: invert(99%) sepia(3%) saturate(61%) hue-rotate(142deg)
+        brightness(117%) contrast(86%);
+    }
   }
 }
 
@@ -139,60 +249,4 @@
 .rangeSlider::-webkit-slider-thumb:hover,
 .rangeSlider::-webkit-slider-thumb:active {
   background: var(--black);
-}
-
-:root {
-  /*==========Colors==========*/
-  --full-black: #0a0a0a;
-  --full-black-75: rgba(10, 10, 10, 0.75);
-  --full-black-50: rgba(10, 10, 10, 0.5);
-  --full-black-25: rgba(10, 10, 10, 0.25);
-  --black: #141414;
-  --black-75: rgba(20, 20, 20, 0.75);
-  --black-50: rgba(20, 20, 20, 0.5);
-  --black-25: rgba(20, 20, 20, 0.25);
-  --dust: #807f7f;
-  --dust-75: rgba(128, 127, 127, 0.75);
-  --dust-50: rgba(128, 127, 127, 0.5);
-  --dust-25: rgba(128, 127, 127, 0.25);
-  --white: #ededed;
-  --white-75: rgba(237, 237, 237, 0.75);
-  --white-50: rgba(237, 237, 237, 0.5);
-  --white-25: rgba(237, 237, 237, 0.25);
-  --red: #e9422b;
-  --red-75: rgba(233, 66, 43, 0.75);
-  --red-50: rgba(233, 66, 43, 0.5);
-  --red-25: rgba(233, 66, 43, 0.2);
-  --orange: #e9922b;
-  --orange-75: rgba(233, 146, 43, 0.75);
-  --orange-50: rgba(233, 146, 43, 0.5);
-  --orange-25: rgba(233, 146, 43, 0.25);
-  --yellow: #e9d62b;
-  --yellow-75: rgba(233, 214, 43, 0.75);
-  --yellow-50: rgba(233, 214, 43, 0.5);
-  --yellow-25: rgba(233, 214, 43, 0.25);
-  --lime: #96e92b;
-  --lime-75: rgba(150, 233, 43, 0.75);
-  --lime-50: rgba(150, 233, 43, 0.5);
-  --lime-25: rgba(150, 233, 43, 0.25);
-  --mint: #28e847;
-  --mint-75: rgba(40, 232, 71, 0.75);
-  --mint-50: rgba(40, 232, 71, 0.5);
-  --mint-25: rgba(40, 232, 71, 0.25);
-  --sky: #2becd5;
-  --sky-75: rgba(43, 236, 213, 0.75);
-  --sky-50: rgba(43, 236, 213, 0.5);
-  --sky-25: rgba(43, 236, 213, 0.25);
-  --water: #2b90ec;
-  --water-75: rgba(43, 144, 236, 0.75);
-  --water-50: rgba(43, 144, 236, 0.5);
-  --water-25: rgba(43, 144, 236, 0.25);
-  --acid-blue: #2f2bec;
-  --acid-blue-75: rgba(47, 43, 236, 0.75);
-  --acid-blue-50: rgba(47, 43, 236, 0.5);
-  --acid-blue-25: rgba(47, 43, 236, 0.25);
-  --pink: #ee48bf;
-  --pink-75: rgba(238, 72, 191, 0.75);
-  --pink-50: rgba(238, 72, 191, 0.5);
-  --pink-25: rgba(238, 72, 191, 0.25);
 }

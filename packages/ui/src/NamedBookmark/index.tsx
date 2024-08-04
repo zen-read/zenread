@@ -14,7 +14,7 @@ const NamedBookmark = ({ title, onClick }: NamedBookmarkProps) => {
       onClick={onClick}
       className="box-border flex cursor-pointer gap-4 border-l-2 py-4 pl-6 pr-4"
     >
-      <Bookmark className="shrink-0" />
+      <Bookmark className="shrink-0 filterColor-secondary" />
       {title}
     </div>
   );

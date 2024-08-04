@@ -44,7 +44,7 @@ export const OriginLogo = ({
               className="h-full w-full object-cover"
             />
           ) : (
-            <div className="h-full w-full animate-pulse bg-black-25%"></div>
+            <div className="h-full w-full animate-pulse bg-secondary-25%"></div>
           )}
         </div>
         {label && (

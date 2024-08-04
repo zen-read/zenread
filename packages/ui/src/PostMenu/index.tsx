@@ -23,25 +23,31 @@ export const PostMenu = ({
   bookmarkFn,
 }: PostMenuParams) => {
   return (
-    <div className="flex items-center gap-4 rounded-md border border-black px-5 py-4 bg-white">
+    <div className="flex items-center gap-4 rounded-md border border-secondary px-5 py-4 bg-primary">
       <Button
         onClick={saveFn}
         size="small"
         type="transparent"
-        icon={isSavedPost ? <Heart /> : <HeartOutline />}
+        icon={
+          isSavedPost ? (
+            <Heart className="filterColor-secondary" />
+          ) : (
+            <HeartOutline className="filterColor-secondary" />
+          )
+        }
       />
       <Button
         onClick={listFn}
         size="small"
         type="transparent"
-        icon={<List />}
+        icon={<List className="filterColor-secondary" />}
       />
       {isSavedPost && (
         <Button
           onClick={bookmarkFn}
           size="small"
           type="transparent"
-          icon={<Bookmark />}
+          icon={<Bookmark className="filterColor-secondary" />}
         />
       )}
     </div>

@@ -25,12 +25,12 @@ const variants = cva(
   {
     variants: {
       type: {
-        full: "bg-black text-white hover:bg-black-75% disabled:bg-black-50%",
+        full: "bg-secondary text-primary hover:bg-secondary-75% disabled:bg-secondary-50%",
         outline:
-          "border border-black text-black hover:bg-dust-25% disabled:border-black-75% disabled:text-black-75%",
+          "border border-secondary text-secondary hover:bg-dust-25% disabled:border-secondary-75% disabled:text-secondary-75%",
         transparent:
-          "bg-transparent text-black hover:bg-dust-25% disabled:text-black-75%",
-        loading: "animate-pulse bg-black-25% w-20 cursor-default",
+          "bg-transparent text-secondary hover:bg-dust-25% disabled:text-secondary-75%",
+        loading: "animate-pulse bg-secondary-25% w-20 cursor-default",
       },
       size: {
         default: "p-6 gap-4",
@@ -67,7 +67,7 @@ export const Button = ({
           {icon && (
             <div
               className={cn(
-                type === "full" && "filterColor-white",
+                type === "full" && "filterColor-primary",
                 disabled && "opacity-75",
               )}
             >

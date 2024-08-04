@@ -10,7 +10,7 @@ interface ControllUnitParams {
 /** Controll group for settings */
 const ControllUnit = ({ label, description, control }: ControllUnitParams) => {
   return (
-    <div className="flex items-center border-b border-black py-5">
+    <div className="flex items-center border-b border-secondary py-5">
       <div className="shrink grow basis-0">
         <span className="mb-4 w-full font-bold">{label}</span>
         {description && <p className="font-small">{description}</p>}

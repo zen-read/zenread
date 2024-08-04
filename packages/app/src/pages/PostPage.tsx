@@ -76,8 +76,8 @@ const PostPage = () => {
               border
               loaded
             />
-            <div className="w-3 h-3 bg-black rounded-full"></div>
-            <span className="font-normal text-xs leading-none">
+            <div className="w-3 h-3 bg-secondary rounded-full"></div>
+            <span className="font-date">
               {formatDate(templateData.dateOfPublish)}
             </span>
           </div>

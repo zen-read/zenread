@@ -36,7 +36,7 @@ export const TextBlock = ({ type, children, loaded }: TextBlockProps) => {
       {loaded ? (
         <BlockTag className={variants({ type })}>{children}</BlockTag>
       ) : (
-        <div className="h-60 w-full animate-pulse rounded-md bg-black-25%"></div>
+        <div className="h-60 w-full animate-pulse rounded-md bg-secondary-25%"></div>
       )}
     </>
   );

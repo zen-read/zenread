@@ -64,17 +64,17 @@ export const PostCard = ({
                 size="M"
               />
               {loaded ? (
-                <span className="font-date flex items-center text-white">
+                <span className="font-date flex items-center text-secondary">
                   {formatDate(new Date(date))}
                 </span>
               ) : (
-                <div className="h-5 w-12 animate-pulse rounded bg-black-25%"></div>
+                <div className="h-5 w-12 animate-pulse rounded bg-secondary-25%"></div>
               )}
             </div>
             {loaded ? (
-              <h1 className="font-heading-4 text-white">{header}</h1>
+              <h1 className="font-heading-4 text-secondary">{header}</h1>
             ) : (
-              <div className="h-8 w-13 animate-pulse rounded-md bg-black-25%"></div>
+              <div className="h-8 w-13 animate-pulse rounded-md bg-secondary-25%"></div>
             )}
           </div>
         </div>

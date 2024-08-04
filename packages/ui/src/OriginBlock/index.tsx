@@ -38,7 +38,7 @@ export const OriginBlock = ({
 
   return (
     <div className={cn("relative w-full", className)}>
-      <div className="relative z-20 flex w-full items-center justify-between rounded border border-black bg-white px-6 py-4">
+      <div className="relative z-20 flex w-full items-center justify-between rounded border border-secondary bg-primary px-6 py-4">
         <OriginLogo
           link=""
           size="XL"
@@ -51,18 +51,24 @@ export const OriginBlock = ({
           <Button
             size="small"
             type="transparent"
-            icon={isSaved ? <Heart /> : <HeartOutline />}
+            icon={
+              isSaved ? (
+                <Heart className="filterColor-secondary" />
+              ) : (
+                <HeartOutline className="filterColor-secondary" />
+              )
+            }
           />
           <Button
             onClick={() => setOpened(!opened)}
             size="small"
             type={opened ? "full" : "transparent"}
-            icon={<Info />}
+            icon={<Info className="filterColor-secondary" />}
           />
         </div>
       </div>
       {opened && (
-        <div className="absolute z-10 -mt-[3px] grid w-full grid-cols-5 rounded-b border border-black bg-white pt-[2px]">
+        <div className="absolute z-10 -mt-[3px] grid w-full grid-cols-5 rounded-b border border-secondary bg-primary pt-[2px]">
           <p className="font-text col-start-1 col-end-4 p-6">{description}</p>
           <div className="col-start-4 col-end-6 p-6">
             <span className="font-text pb-5">Links</span>

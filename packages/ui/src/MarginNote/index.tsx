@@ -24,7 +24,7 @@ interface MarginNote {
 const variants = cva(["flex gap-4 p-4 rounded cursor-pointer"], {
   variants: {
     color: {
-      default: "bg-white-25%",
+      default: "bg-primary-25%",
       red: "bg-red-25%",
       orange: "bg-orange-25%",
       yellow: "bg-yellow-25%",

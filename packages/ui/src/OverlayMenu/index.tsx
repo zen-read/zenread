@@ -2,7 +2,6 @@ import { Button } from "#Button/index.js";
 import Left from "#Icons/mid/Left.js";
 import Params from "#Icons/mid/Params.js";
 import Right from "#Icons/mid/Right.js";
-import Sun from "#Icons/mid/Sun.js";
 import { Logo } from "#Logo/index.js";
 import { useState } from "react";
 
@@ -11,8 +10,6 @@ interface OverlayMenuProps {
   opened: boolean;
   /** Function for redirect to "Read list" page */
   readListUrl?: string;
-  /** Switch dark/light mode */
-  darkModeFn?: () => void;
   /** Function for opening settings overlay */
   paramsFn?: () => void;
 }
@@ -21,12 +18,11 @@ interface OverlayMenuProps {
 export const OverlayMenu = ({
   opened,
   readListUrl,
-  darkModeFn,
   paramsFn,
 }: OverlayMenuProps) => {
   const [isOpened, setIsOpened] = useState(opened);
   return (
-    <div className="flex items-center gap-4 rounded border border-black p-3 bg-white">
+    <div className="flex items-center gap-4 rounded border border-secondary p-3 bg-primary">
       <a href="/">
         <Logo type="small" className="ml-4 h-[30px]" />
       </a>
@@ -37,16 +33,10 @@ export const OverlayMenu = ({
               <Button type="transparent" size="small" label="read list" />
             </a>
             <Button
-              onClick={darkModeFn}
-              type="transparent"
-              size="small"
-              icon={<Sun />}
-            />
-            <Button
               onClick={paramsFn}
               type="transparent"
               size="small"
-              icon={<Params />}
+              icon={<Params className="filterColor-secondary" />}
             />
           </>
         )}
@@ -54,7 +44,13 @@ export const OverlayMenu = ({
           onClick={() => setIsOpened(!isOpened)}
           type="transparent"
           size="small"
-          icon={isOpened ? <Left /> : <Right />}
+          icon={
+            isOpened ? (
+              <Left className="filterColor-secondary" />
+            ) : (
+              <Right className="filterColor-secondary" />
+            )
+          }
         />
       </div>
     </div>
