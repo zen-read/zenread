@@ -1,6 +1,7 @@
 import type { PostCardProps, TagProps } from "@zenread/ui";
 import { Button, PostCard, SearchInput, Tag } from "@zenread/ui";
 import { Filter } from "@zenread/ui/icons/mid/index.js";
+import { useState } from "react";
 import BodyWrapper from "../components/BodyWrapper.js";
 
 const tags: TagProps[] = [
@@ -55,6 +56,8 @@ const templateArticles: PostCardProps[] = [
 ];
 
 const ReadList = () => {
+  const [isFilterShowing, setIsFilterShowing] = useState(false);
+
   return (
     <BodyWrapper className="px-6" fullWidth>
       <h1 className="mt-5 font-bold text-[40px]">Read list</h1>
@@ -62,24 +65,35 @@ const ReadList = () => {
         <div className="sticky">
           <div className="flex gap-3">
             <Button
+              onClick={() => setIsFilterShowing(!isFilterShowing)}
               title="Show filters"
-              type="transparent"
+              type={isFilterShowing ? "full" : "transparent"}
               size="small"
-              icon={<Filter className="filterColor-secondary" />}
+              icon={
+                <Filter
+                  className={
+                    isFilterShowing
+                      ? "filterColor-primary"
+                      : "filterColor-secondary"
+                  }
+                />
+              }
             />
             <SearchInput type="outline" placeholder="Search..." />
           </div>
-          <div className="mt-6 inline-flex gap-4">
-            {tags.map((tag, index) => (
-              <Tag
-                key={index}
-                label={tag.label}
-                icon={tag.icon}
-                color={tag.color}
-                link={tag.link}
-              />
-            ))}
-          </div>
+          {isFilterShowing && (
+            <div className="mt-6 inline-flex gap-4">
+              {tags.map((tag, index) => (
+                <Tag
+                  key={index}
+                  label={tag.label}
+                  icon={tag.icon}
+                  color={tag.color}
+                  link={tag.link}
+                />
+              ))}
+            </div>
+          )}
         </div>
         <div>
           <h4 className="font-heading-4">Recently added</h4>
