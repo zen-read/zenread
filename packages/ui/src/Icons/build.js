@@ -21,11 +21,25 @@ async function transformIcon(svg, componentName) {
 }
 
 async function getIcons(style) {
-  let files = await fs.readdir(`./assets/icons/${style}`);
+  let files = await fs.readdir(`../../assets/icons/${style}`);
+
+  // Generate index.ts inside style directories for exporting icons
+  await fs.writeFile(
+    `./${style}/index.ts`,
+    files
+      .map(
+        (file) =>
+          `export { default as ${camelcase(file.replace(/\.svg$/, ""), {
+            pascalCase: true,
+          })} } from "./${file.replace(/\.svg$/, ".js")}";`,
+      )
+      .join("\n"),
+    "utf8",
+  );
 
   return Promise.all(
     files.map(async (file) => ({
-      svg: await fs.readFile(`./assets/icons/${style}/${file}`, "utf8"),
+      svg: await fs.readFile(`../../assets/icons/${style}/${file}`, "utf8"),
       componentName: `${camelcase(file.replace(/\.svg$/, ""), {
         pascalCase: true,
       })}`,
@@ -38,14 +52,14 @@ async function ensureWrite(file, text) {
   await fs.writeFile(file, text, "utf8");
 }
 
-async function buildIcons(style, format) {
-  let outDir = `./src/Icons/${style}`;
+async function buildIcons(style) {
+  let outDir = `./${style}`;
 
   let icons = await getIcons(style);
 
   await Promise.all(
     icons.flatMap(async ({ componentName, svg }) => {
-      let content = await transformIcon(svg, componentName, format);
+      let content = await transformIcon(svg, componentName);
 
       return [ensureWrite(`${outDir}/${componentName}.tsx`, content)];
     }),
@@ -53,12 +67,12 @@ async function buildIcons(style, format) {
 }
 
 async function main() {
-  console.log(`Building icons...`);
+  console.log(`🛠️ Building icons...`);
 
   await Promise.all([primraf(`./small/*`), primraf(`./mid/*`)]);
-  await Promise.all([buildIcons("small", "cjs"), buildIcons("mid", "cjs")]);
+  await Promise.all([buildIcons("small"), buildIcons("mid")]);
 
-  return console.log(`Finished building icons!`);
+  return console.log(`🎉 Finished building icons!`);
 }
 
 main();
