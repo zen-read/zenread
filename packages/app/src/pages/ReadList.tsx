@@ -56,7 +56,7 @@ const templateArticles: PostCardProps[] = [
 
 const ReadList = () => {
   return (
-    <BodyWrapper className="px-6">
+    <BodyWrapper className="px-6" fullWidth>
       <h1 className="mt-5 font-bold text-[40px]">Read list</h1>
       <div className="mt-5 grid grid-cols-2 gap-[18px]">
         <div className="sticky">
