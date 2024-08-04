@@ -2,7 +2,7 @@ import { Tag } from "#Tag/index.js";
 import { cn, formatDate } from "@zenread/shared";
 import { OriginLogo } from "../OriginLogo/index.js";
 
-interface PostCardProps {
+export interface PostCardProps {
   /** Article main image */
   backgroundImage?: string;
   /** Title of article */

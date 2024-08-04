@@ -1,7 +1,7 @@
 import { cn } from "@zenread/shared";
 import { cva } from "class-variance-authority";
 
-interface TagProps {
+export interface TagProps {
   /** Name of tag */
   label?: string;
   /** Emoji icon */
