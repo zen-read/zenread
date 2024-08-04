@@ -21,9 +21,13 @@
     "dist/"
   ],
   "devDependencies": {
-    "clsx": "^2.1.1",
     "@zenread/tsconfig": "workspace:*",
-    "typescript": "^5.5.3",
-    "tailwind-merge": "^2.4.0"
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.4.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "react": "19.0.0-rc-8269d55d-20240802",
+    "react-dom": "19.0.0-rc-8269d55d-20240802"
   }
 }
