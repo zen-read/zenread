@@ -96,6 +96,13 @@ importers:
         version: 5.3.5(@types/node@20.14.14)(terser@5.31.3)
 
   packages/shared:
+    dependencies:
+      react:
+        specifier: 19.0.0-rc-8269d55d-20240802
+        version: 19.0.0-rc-8269d55d-20240802
+      react-dom:
+        specifier: 19.0.0-rc-8269d55d-20240802
+        version: 19.0.0-rc-8269d55d-20240802(react@19.0.0-rc-8269d55d-20240802)
     devDependencies:
       '@zenread/tsconfig':
         specifier: workspace:*
