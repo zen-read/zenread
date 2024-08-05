@@ -61,7 +61,7 @@ const ReadList = () => {
   return (
     <BodyWrapper className="px-6" fullWidth>
       <h1 className="mt-5 font-bold text-[40px]">Read list</h1>
-      <div className="mt-5 grid grid-cols-2 gap-[18px]">
+      <div className="mt-5 grid grid-cols-[1fr_2fr] gap-[18px]">
         <div className="sticky">
           <div className="flex gap-3">
             <Button
@@ -82,16 +82,21 @@ const ReadList = () => {
             <SearchInput type="outline" placeholder="Search..." />
           </div>
           {isFilterShowing && (
-            <div className="mt-6 inline-flex gap-4">
-              {tags.map((tag, index) => (
-                <Tag
-                  key={index}
-                  label={tag.label}
-                  icon={tag.icon}
-                  color={tag.color}
-                  link={tag.link}
-                />
-              ))}
+            <div className="flex flex-col gap-5 mt-6">
+              <span className="font-text pb-3 border-b border-secondary-25% text-secondary-50%">
+                Tags
+              </span>
+              <div className="inline-flex gap-4">
+                {tags.map((tag, index) => (
+                  <Tag
+                    key={index}
+                    label={tag.label}
+                    icon={tag.icon}
+                    color={tag.color}
+                    link={tag.link}
+                  />
+                ))}
+              </div>
             </div>
           )}
         </div>
