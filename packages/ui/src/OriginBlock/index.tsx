@@ -52,20 +52,14 @@ export const OriginBlock = ({
             title={isSaved ? "Unsave from read list" : "Save to read list"}
             size="small"
             type="transparent"
-            icon={
-              isSaved ? (
-                <Heart className="filterColor-secondary" />
-              ) : (
-                <HeartOutline className="filterColor-secondary" />
-              )
-            }
+            icon={isSaved ? <Heart /> : <HeartOutline />}
           />
           <Button
             title={`Show info about ${originName}`}
             onClick={() => setOpened(!opened)}
             size="small"
             type={opened ? "full" : "transparent"}
-            icon={<Info className="filterColor-secondary" />}
+            icon={<Info />}
           />
         </div>
       </div>

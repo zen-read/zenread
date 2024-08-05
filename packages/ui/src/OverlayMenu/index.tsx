@@ -37,7 +37,7 @@ export const OverlayMenu = ({
               onClick={paramsFn}
               type="transparent"
               size="small"
-              icon={<Params className="filterColor-secondary" />}
+              icon={<Params />}
             />
           </>
         )}
@@ -46,13 +46,7 @@ export const OverlayMenu = ({
           type="transparent"
           size="small"
           title={isOpened ? "Swap menu" : "Open menu"}
-          icon={
-            isOpened ? (
-              <Left className="filterColor-secondary" />
-            ) : (
-              <Right className="filterColor-secondary" />
-            )
-          }
+          icon={isOpened ? <Left /> : <Right />}
         />
       </div>
     </div>

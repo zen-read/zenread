@@ -71,7 +71,9 @@ export const Button = ({
           {icon && (
             <div
               className={cn(
-                type === "full" && "filterColor-primary",
+                type === "full"
+                  ? "filterColor-primary"
+                  : "filterColor-secondary",
                 disabled && "opacity-75",
               )}
             >

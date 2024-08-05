@@ -87,7 +87,7 @@ const PostPage = () => {
           <div className="flex gap-3">
             <Button
               title="Go to original post in web"
-              icon={<Origin className="filterColor-secondary" />}
+              icon={<Origin />}
               type="transparent"
               size="small"
             />
@@ -97,13 +97,7 @@ const PostPage = () => {
                   ? "Unsave from read list"
                   : "Save to read list"
               }
-              icon={
-                templateData.saved ? (
-                  <Heart className="filterColor-secondary" />
-                ) : (
-                  <HeartOutline className="filterColor-secondary" />
-                )
-              }
+              icon={templateData.saved ? <Heart /> : <HeartOutline />}
               type="transparent"
               size="small"
             />

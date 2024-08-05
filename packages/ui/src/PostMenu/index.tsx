@@ -29,20 +29,14 @@ export const PostMenu = ({
         onClick={saveFn}
         size="small"
         type="transparent"
-        icon={
-          isSavedPost ? (
-            <Heart className="filterColor-secondary" />
-          ) : (
-            <HeartOutline className="filterColor-secondary" />
-          )
-        }
+        icon={isSavedPost ? <Heart /> : <HeartOutline />}
       />
       <Button
         title="Show content of post"
         onClick={listFn}
         size="small"
         type="transparent"
-        icon={<List className="filterColor-secondary" />}
+        icon={<List />}
       />
       {isSavedPost && (
         <Button
@@ -50,7 +44,7 @@ export const PostMenu = ({
           onClick={bookmarkFn}
           size="small"
           type="transparent"
-          icon={<Bookmark className="filterColor-secondary" />}
+          icon={<Bookmark />}
         />
       )}
     </div>
