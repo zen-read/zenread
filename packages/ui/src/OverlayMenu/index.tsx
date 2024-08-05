@@ -23,8 +23,11 @@ export const OverlayMenu = ({
   const [isOpened, setIsOpened] = useState(opened);
   return (
     <div className="flex items-center gap-4 rounded border border-secondary p-3 bg-primary">
-      <a href="/">
-        <Logo type="small" className="ml-4 h-[30px]" />
+      <a href="/" title="Go to main page">
+        <Logo
+          type="small"
+          className="ml-4 h-[30px] hover:opacity-75 transition-opacity duration-135 ease-in-out"
+        />
       </a>
       <div className="flex items-center">
         {isOpened && (
