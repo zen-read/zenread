@@ -6,6 +6,9 @@ import OriginPage from "./pages/OriginPage.js";
 import PostPage from "./pages/PostPage.js";
 import ReadList from "./pages/ReadList.js";
 import "./styles.css";
+import { checkConfig } from "./utils/checkConfig.js";
+
+checkConfig();
 
 const router = createBrowserRouter([
   {

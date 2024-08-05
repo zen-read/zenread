@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tauri-apps/api": "2.0.0-rc.0",
+    "@tauri-apps/plugin-fs": "2.0.0-rc.0",
     "@zenread/shared": "workspace:*",
     "@zenread/tailwind-config": "workspace:*",
     "@zenread/tsconfig": "workspace:*",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "2.0.0-rc.0",
+    "@tauri-apps/api": "next",
     "@types/react": "npm:types-react@rc",
     "@types/react-dom": "npm:types-react-dom@rc",
     "@vitejs/plugin-react": "^4.2.1",
