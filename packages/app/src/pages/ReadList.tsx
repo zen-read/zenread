@@ -69,15 +69,7 @@ const ReadList = () => {
               title="Show filters"
               type={isFilterShowing ? "full" : "transparent"}
               size="small"
-              icon={
-                <Filter
-                  className={
-                    isFilterShowing
-                      ? "filterColor-primary"
-                      : "filterColor-secondary"
-                  }
-                />
-              }
+              icon={<Filter />}
             />
             <SearchInput type="outline" placeholder="Search..." />
           </div>
