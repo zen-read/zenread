@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --debug",
+    "vite": "vite --debug",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri",
+    "dev": "tauri dev",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
