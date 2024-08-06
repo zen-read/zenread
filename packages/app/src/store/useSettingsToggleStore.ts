@@ -1,8 +1,8 @@
-import create from "zustand";
+import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
 interface SettingsToggleState {
-  isSettingsOpen: boolean;
+  isSettingsOpen: boolean | undefined;
   toggleSettings: () => void;
 }
 
