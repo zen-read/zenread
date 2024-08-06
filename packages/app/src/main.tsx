@@ -6,7 +6,7 @@ import Index from "./pages/Index.js";
 import OriginPage from "./pages/OriginPage.js";
 import PostPage from "./pages/PostPage.js";
 import ReadList from "./pages/ReadList.js";
-import { store } from "./store.js";
+import { settingsOpenedStore } from "./store.js";
 import "./styles.css";
 import { checkConfig } from "./utils/checkConfig.js";
 
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={settingsOpenedStore}>
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>,
