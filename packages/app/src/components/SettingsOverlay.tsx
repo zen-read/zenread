@@ -8,7 +8,6 @@ import {
   Info,
   Storage,
 } from "@zenread/ui/icons/small/index.js";
-import { SettingsClosed, settingsOpenedStore } from "../store.js";
 
 const settingsCats: SelectButtonParams[] = [
   {
@@ -48,11 +47,7 @@ const SettingsOverlay = () => {
               size="small"
               type="transparent"
               icon={<Left />}
-              onClick={() =>
-                settingsOpenedStore.dispatch({
-                  type: "close",
-                } satisfies SettingsClosed)
-              }
+              onClick={() => {}}
             />
             <span className="font-heading-6">Settings</span>
           </div>
