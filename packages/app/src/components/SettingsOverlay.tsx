@@ -8,6 +8,7 @@ import {
   Info,
   Storage,
 } from "@zenread/ui/icons/small/index.js";
+import { useSettingsStore } from "../store/useSettingsStore.js";
 import { useSettingsToggleStore } from "../store/useSettingsToggleStore.js";
 
 const settingsCats: SelectButtonParams[] = [
@@ -40,6 +41,7 @@ const settingsCats: SelectButtonParams[] = [
 
 const SettingsOverlay = () => {
   const { toggleSettings } = useSettingsToggleStore((state) => state);
+  const { settings } = useSettingsStore((state) => state);
 
   return (
     <div className="z-50 fixed w-screen h-screen bg-black-25% flex items-center justify-center">
@@ -65,7 +67,7 @@ const SettingsOverlay = () => {
             ))}
           </div>
         </div>
-        <div>Settings</div>
+        <div>{settings.darkMode}</div>
       </div>
     </div>
   );
