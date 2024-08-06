@@ -1,6 +1,6 @@
 import { cn } from "@zenread/shared";
 
-interface ButtonParams {
+export interface SelectButtonParams {
   /** Name of button */
   label?: string;
   /** Icon for recognizing */
@@ -17,16 +17,16 @@ export const SelectButton = ({
   icon,
   className,
   onClick,
-}: ButtonParams) => {
+}: SelectButtonParams) => {
   return (
     <button
       className={cn(
-        "font-select flex w-full items-center gap-4 rounded px-6 py-4 hover:bg-dust-25%",
+        "font-select flex w-full items-center gap-4 rounded px-6 py-4 hover:bg-dust-25% transition-colors duration-135 ease-in-out",
         className,
       )}
       onClick={onClick}
     >
-      {icon}
+      <div className="filterColor-secondary">{icon}</div>
       {label}
     </button>
   );
