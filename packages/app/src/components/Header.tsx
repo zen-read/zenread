@@ -1,5 +1,6 @@
-import { OverlayMenu } from "@zenread/ui";
 import { cn, useScrollDir } from "@zenread/shared";
+import { OverlayMenu } from "@zenread/ui";
+import { SettingsOpened, settingsOpenedStore } from "../store.js";
 
 const Header = () => {
   const scrollDir = useScrollDir();
@@ -11,7 +12,15 @@ const Header = () => {
         scrollDir === "down" && "-translate-y-[66px]",
       )}
     >
-      <OverlayMenu readListUrl="/readlist" opened />
+      <OverlayMenu
+        paramsFn={() =>
+          settingsOpenedStore.dispatch({
+            type: "open",
+          } satisfies SettingsOpened)
+        }
+        readListUrl="/readlist"
+        opened
+      />
     </div>
   );
 };
