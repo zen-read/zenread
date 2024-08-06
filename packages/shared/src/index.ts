@@ -5,3 +5,5 @@ export type { ConfigType } from "./types/ConfigType.js";
 export type { TextBlockType } from "./types/TextBlockType.js";
 
 export { useScrollDir } from "./hooks/useScrollDir.js";
+
+export { defaultConfig } from "./data/defaultConfig.js";

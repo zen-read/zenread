@@ -1,18 +1,7 @@
-import {
-  BaseDirectory,
-  create,
-  exists,
-  mkdir,
-  writeTextFile,
-} from "@tauri-apps/plugin-fs";
+import { BaseDirectory, create, exists, mkdir } from "@tauri-apps/plugin-fs";
+import { defaultConfig } from "@zenread/shared";
 
-import type { ConfigType } from "@zenread/shared";
-
-async function writeConfig(config: ConfigType) {
-  await writeTextFile("settings.json", JSON.stringify(config, null, 2), {
-    baseDir: BaseDirectory.AppConfig,
-  });
-}
+import { writeConfig } from "./writeConfig.js";
 
 export async function checkConfig() {
   try {
@@ -32,18 +21,6 @@ export async function checkConfig() {
     }
 
     await create(configFilePath, { baseDir });
-
-    const defaultConfig: ConfigType = {
-      firstLaunch: true,
-      darkMode: "system",
-      fontHeadings: "sans",
-      fontText: "sans",
-      colorScheme: null,
-      readListStorage: null,
-      fontSize: 16,
-      showNotification: true,
-    };
-
     await writeConfig(defaultConfig);
 
     return true;
