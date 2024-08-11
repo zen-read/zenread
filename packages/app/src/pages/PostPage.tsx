@@ -61,60 +61,56 @@ type ContentType = {
 
 const PostPage = () => {
   return (
-    <>
-      <BodyWrapper fullWidth={false}>
-        <PostPanel isSavedPost={templateData.saved} />
-        <img
-          className="w-full h-[400px] rounded-lg object-cover"
-          src={templateData.cover}
-          alt=""
-        />
-        <div className="flex justify-between mt-6">
-          <div className="flex gap-4 items-center">
-            <OriginLogo
-              link="/origin"
-              label={templateData.originName}
-              imageUrl={templateData.originLogo}
-              size="L"
-              border
-              loaded
-            />
-            <div className="w-3 h-3 bg-secondary rounded-full"></div>
-            <span className="font-date">
-              {formatDate(templateData.dateOfPublish)}
-            </span>
-          </div>
-          <div className="flex gap-3">
-            <Button
-              title="Go to original post in web"
-              icon={<Origin />}
-              type="transparent"
-              size="small"
-            />
-            <Button
-              title={
-                templateData.saved
-                  ? "Unsave from read list"
-                  : "Save to read list"
-              }
-              icon={templateData.saved ? <Heart /> : <HeartOutline />}
-              type="transparent"
-              size="small"
-            />
-          </div>
+    <BodyWrapper fullWidth={false}>
+      <PostPanel isSavedPost={templateData.saved} />
+      <img
+        className="w-full h-[400px] rounded-lg object-cover"
+        src={templateData.cover}
+        alt=""
+      />
+      <div className="flex justify-between mt-6">
+        <div className="flex gap-4 items-center">
+          <OriginLogo
+            link="/origin"
+            label={templateData.originName}
+            imageUrl={templateData.originLogo}
+            size="L"
+            border
+            loaded
+          />
+          <div className="w-3 h-3 bg-secondary rounded-full"></div>
+          <span className="font-date">
+            {formatDate(templateData.dateOfPublish)}
+          </span>
         </div>
-        <h1 className="mt-5 font-bold text-[40px]">{templateData.title}</h1>
-        <div className="w-full flex justify-center mt-10">
-          <div className="w-[700px]">
-            {templateData.content.map((item, index) => (
-              <TextBlock key={index} type={item.type} loaded>
-                {item.content}
-              </TextBlock>
-            ))}
-          </div>
+        <div className="flex gap-3">
+          <Button
+            title="Go to original post in web"
+            icon={<Origin />}
+            type="transparent"
+            size="small"
+          />
+          <Button
+            title={
+              templateData.saved ? "Unsave from read list" : "Save to read list"
+            }
+            icon={templateData.saved ? <Heart /> : <HeartOutline />}
+            type="transparent"
+            size="small"
+          />
         </div>
-      </BodyWrapper>
-    </>
+      </div>
+      <h1 className="mt-5 font-bold text-[40px]">{templateData.title}</h1>
+      <div className="w-full flex justify-center mt-10">
+        <div className="w-[700px]">
+          {templateData.content.map((item, index) => (
+            <TextBlock key={index} type={item.type} loaded>
+              {item.content}
+            </TextBlock>
+          ))}
+        </div>
+      </div>
+    </BodyWrapper>
   );
 };
 
