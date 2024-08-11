@@ -5,8 +5,9 @@ import OriginPage from "./pages/OriginPage.js";
 import PostPage from "./pages/PostPage.js";
 import ReadList from "./pages/ReadList.js";
 import { initConfig } from "./utils/initConfig.js";
+import { loadConfig } from "./utils/loadConfig.js";
 
-await initConfig();
+await initConfig().then(() => loadConfig());
 
 export const App = () => {
   const location = useLocation();
