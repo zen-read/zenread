@@ -16,6 +16,8 @@ export * from "./PostCard/index.js";
 export * from "./PostMenu/index.js";
 export * from "./Search/index.js";
 export * from "./SelectButton/index.js";
+export * from "./Slider/index.js";
 export * from "./Tag/index.js";
 export * from "./TextBlock/index.js";
+export * from "./Toggle/index.js";
 
