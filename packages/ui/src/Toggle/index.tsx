@@ -1,5 +1,5 @@
 import { cn } from "@zenread/shared";
-import { forwardRef, useState } from "react";
+import { useState } from "react";
 
 interface ToggleProps {
   /** Is that toggle active? */
@@ -7,7 +7,7 @@ interface ToggleProps {
 }
 
 /** Toggle button */
-export const Toggle = forwardRef(({ active }: ToggleProps) => {
+export const Toggle = ({ active }: ToggleProps) => {
   const [isActive, setIsActive] = useState(active);
   return (
     <div
@@ -25,6 +25,4 @@ export const Toggle = forwardRef(({ active }: ToggleProps) => {
       ></div>
     </div>
   );
-});
-
-Toggle.displayName = "Toggle";
+};
