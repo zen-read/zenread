@@ -1,11 +1,10 @@
-import { ControllUnit } from "#ControllUnit/index.js";
 import { Toggle } from "#Toggle/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
-const meta: Meta<typeof ControllUnit> = {
-  title: "Controlls/Controll Unit",
-  component: ControllUnit,
+const meta: Meta<typeof ControlUnit> = {
+  title: "Controls/Control Unit",
+  component: ControlUnit,
   decorators: [
     (Story) => (
       <div className="w-96">
@@ -16,11 +15,11 @@ const meta: Meta<typeof ControllUnit> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ControllUnit>;
+type Story = StoryObj<typeof ControlUnit>;
 
 export const Default: Story = {
   args: {
-    label: "Controll Unit",
+    label: "Control Unit",
     description: "Description",
     control: <Toggle active />,
   },

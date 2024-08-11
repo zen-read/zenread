@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
 const meta: Meta<typeof DropdownMenu> = {
-  title: "Controlls/Dropdown Menu",
+  title: "Controls/Dropdown Menu",
   component: DropdownMenu,
   decorators: [
     (Story) => (

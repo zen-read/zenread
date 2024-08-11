@@ -2,7 +2,7 @@ import { Toggle } from "#Toggle/index.js";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Toggle> = {
-  title: "Controlls/Toggle",
+  title: "Controls/Toggle",
   component: Toggle,
 };
 

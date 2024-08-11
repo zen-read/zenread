@@ -3,7 +3,7 @@ import "./global.css";
 export * from "./BookmarkBreak/index.js";
 export * from "./BookmarksOverlay/index.js";
 export * from "./Button/index.js";
-export * from "./ControllUnit/index.js";
+export * from "./ControlUnit/index.js";
 export * from "./DropdownMenu/index.js";
 export * from "./Icons/index.js";
 export * from "./Link/index.js";
