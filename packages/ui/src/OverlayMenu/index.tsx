@@ -9,7 +9,7 @@ interface OverlayMenuProps {
   /** Is that menu opened? */
   opened: boolean;
   /** Function for redirect to "Read list" page */
-  readListUrl?: string;
+  readListUrl: string;
   /** Function for opening settings overlay */
   paramsFn?: () => void;
 }
@@ -37,9 +37,9 @@ export const OverlayMenu = ({
             </a>
             <Button
               title="Open settings panel"
-              onClick={paramsFn}
               type="transparent"
               size="small"
+              onClick={paramsFn}
               icon={<Params />}
             />
           </>
