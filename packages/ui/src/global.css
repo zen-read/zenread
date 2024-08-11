@@ -79,6 +79,10 @@
     }
   }
 
+  body {
+    color: var(--secondary);
+  }
+
   @font-face {
     font-family: "Onest";
     font-optical-sizing: auto;
