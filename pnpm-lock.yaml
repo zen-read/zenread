@@ -154,6 +154,12 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-8269d55d-20240802
         version: 19.0.0-rc-8269d55d-20240802(react@19.0.0-rc-8269d55d-20240802)
+      react-router:
+        specifier: ^6.26.0
+        version: 6.26.0(react@19.0.0-rc-8269d55d-20240802)
+      react-router-dom:
+        specifier: ^6.26.0
+        version: 6.26.0(react-dom@19.0.0-rc-8269d55d-20240802(react@19.0.0-rc-8269d55d-20240802))(react@19.0.0-rc-8269d55d-20240802)
     devDependencies:
       '@babel/core':
         specifier: ^7.24.9

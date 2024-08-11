@@ -79,7 +79,9 @@
     "class-variance-authority": "^0.7.0",
     "concurrently": "^8.2.2",
     "react": "19.0.0-rc-8269d55d-20240802",
-    "react-dom": "19.0.0-rc-8269d55d-20240802"
+    "react-dom": "19.0.0-rc-8269d55d-20240802",
+    "react-router": "^6.26.0",
+    "react-router-dom": "^6.26.0"
   },
   "exports": {
     ".": "./src/index.ts",
