@@ -1,5 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["zenread"]
+  "cSpell.words": ["zenread"],
+  "editor.hover.enabled": true,
+  "rust-analyzer.linkedProjects": ["Cargo.toml", "packages/app/src-tauri/Cargo.toml"],
 }
