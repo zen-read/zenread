@@ -57,8 +57,8 @@ impl Default for AppConfig {
       dark_mode: DarkMode::System,
       font_headings: FontType::Sans,
       font_text: FontType::Serif,
-      color_scheme: String::new(),
-      read_list_storage: String::new(),
+      color_scheme: "default".to_string(),
+      read_list_storage: "system".to_string(),
       font_size: 16,
       show_notifications: true
     }
