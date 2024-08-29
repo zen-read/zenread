@@ -14,7 +14,7 @@ const Header = () => {
       )}
     >
       <OverlayMenu
-        paramsFn={() => navigate("/settings")}
+        paramsFn={() => navigate("/settings/main")}
         readListUrl="/readlist"
         opened
       />
