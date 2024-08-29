@@ -54,7 +54,7 @@ impl Default for UserStore {
 }
 
 impl UserStore {
-  pub fn init_user_store(handle: AppHandle) {
+  pub fn init(handle: AppHandle) {
     let store_dir = get_config_dir(handle);
     let user_store = Self::default();
     let store_file = fs::File::create(store_dir.join("user_store.json")).expect("Failed to create user store file");
@@ -62,7 +62,7 @@ impl UserStore {
         .expect("Failed to write user store file");
   }
 
-  pub fn load_user_store(handle: AppHandle) -> Self {
+  pub fn load(handle: AppHandle) -> Self {
     let store_path = get_config_dir(handle).join("user_store.json");
     println!("{}", store_path.to_str().unwrap());
     let store_file = fs::File::open(store_path).expect("Failed to open user store file");
