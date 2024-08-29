@@ -5,9 +5,12 @@ import OriginPage from "./pages/OriginPage.js";
 import PostPage from "./pages/PostPage.js";
 import ReadList from "./pages/ReadList.js";
 import { initConfig } from "./utils/initConfig.js";
+import { initUserStore } from "./utils/initUserStore.js";
 import { loadConfig } from "./utils/loadConfig.js";
+import { loadUserStore } from "./utils/loadUserStore.js";
 
 await initConfig().then(() => loadConfig());
+await initUserStore().then(() => loadUserStore());
 
 export const App = () => {
   const location = useLocation();
