@@ -73,6 +73,24 @@ const settingsContent: SettingsContentType[] = [
       },
     ],
   },
+  {
+    linkLabel: "Storage",
+    url: "storage",
+    group: [
+      {
+        title: "Offline storage",
+        controls: [
+          {
+            title: "Read list local storage",
+            desc: "Where zen.read need to store your read list content",
+            control: "button",
+            configName: "read_list_storage",
+            buttonLabel: "Open explorer",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default settingsContent;

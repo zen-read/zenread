@@ -1,10 +1,11 @@
 import { SelectButton, SelectButtonParams } from "@zenread/ui";
-import { Link } from "react-router-dom";
 import {
-  CapitalLetter,
-  ColorMatch,
-  Info,
+    CapitalLetter,
+    ColorMatch,
+    Info,
+    Storage,
 } from "@zenread/ui/icons/small/index.js";
+import { Link } from "react-router-dom";
 
 type CategoryLinks = {
   label: SelectButtonParams["label"];
@@ -22,6 +23,11 @@ const cats: CategoryLinks[] = [
     label: "Color scheme",
     icon: <ColorMatch />,
     url: "/color",
+  },
+  {
+    label: "Storage",
+    icon: <Storage />,
+    url: "/storage",
   },
   {
     label: "About app",
