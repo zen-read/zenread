@@ -15,33 +15,12 @@ pub struct Tag {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct Origin {
-  #[serde(default)]
-  pub name: String,
-
-  #[serde(default)]
-  pub logo: String,
-
-  #[serde(default)]
-  pub link: String,
-
-  #[serde(default)]
-  pub desc: String,
-
-  #[serde(default)]
-  pub saved: bool,
-
-  #[serde(default)]
-  pub categories: Vec<String>,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
 pub struct UserStore {
   #[serde(default)]
   pub tags: Vec<Tag>,
 
   #[serde(default)]
-  pub origins: Vec<Origin>
+  pub origins: Vec<String>
 }
 
 impl Default for UserStore {
