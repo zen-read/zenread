@@ -14,7 +14,7 @@ export const ControlUnit = ({
   control,
 }: ControlUnitParams) => {
   return (
-    <div className="flex items-center border-b border-secondary py-5">
+    <div className="flex items-center border-b border-secondary-25% py-5">
       <div className="shrink grow basis-0">
         <span className="mb-4 w-full font-bold">{label}</span>
         {description && <p className="font-small">{description}</p>}

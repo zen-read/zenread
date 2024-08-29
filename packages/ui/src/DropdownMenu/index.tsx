@@ -23,10 +23,14 @@ const DropdownMenu = ({ items, selectedItem }: DropdownMenuProps) => {
         <span className="font-select pointer-events-none w-full text-ellipsis text-secondary">
           {activeItem}
         </span>
-        {open ? <Top className="shrink-0" /> : <Bottom className="shrink-0" />}
+        {open ? (
+          <Top className="shrink-0 filterColor-secondary" />
+        ) : (
+          <Bottom className="shrink-0 filterColor-secondary" />
+        )}
       </div>
       {open && (
-        <div className="absolute mt-3 max-h-14 w-full cursor-pointer overflow-y-scroll rounded border border-secondary">
+        <div className="absolute mt-3 max-h-14 w-full bg-primary z-10 cursor-pointer overflow-y-scroll rounded border border-secondary">
           {items.map((item, index) => (
             <div
               key={index}
@@ -36,7 +40,9 @@ const DropdownMenu = ({ items, selectedItem }: DropdownMenuProps) => {
               <span className="font-select pointer-events-none w-full text-ellipsis text-secondary">
                 {item}
               </span>
-              {item === activeItem && <Check className="shrink-0" />}
+              {item === activeItem && (
+                <Check className="shrink-0 filterColor-secondary" />
+              )}
             </div>
           ))}
         </div>
