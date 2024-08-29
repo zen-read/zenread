@@ -3,6 +3,7 @@ import { Button, PostCard, SearchInput, Tag } from "@zenread/ui";
 import { Filter } from "@zenread/ui/icons/mid/index.js";
 import { useState } from "react";
 import BodyWrapper from "../components/BodyWrapper.js";
+import { useUserStore } from "../store/useUserStore.js";
 
 const tags: TagProps[] = [
   {
@@ -57,6 +58,7 @@ const templateArticles: PostCardProps[] = [
 
 const ReadList = () => {
   const [isFilterShowing, setIsFilterShowing] = useState(false);
+  const { userStore } = useUserStore();
 
   return (
     <BodyWrapper className="px-6" fullWidth>
@@ -74,20 +76,39 @@ const ReadList = () => {
             <SearchInput type="outline" placeholder="Search..." />
           </div>
           {isFilterShowing && (
-            <div className="flex flex-col gap-5 mt-6">
-              <span className="font-text pb-3 border-b border-secondary-25% text-secondary-50%">
-                Tags
-              </span>
-              <div className="inline-flex gap-4">
-                {tags.map((tag, index) => (
-                  <Tag
-                    key={index}
-                    label={tag.label}
-                    icon={tag.icon}
-                    color={tag.color}
-                    link={tag.link}
-                  />
-                ))}
+            <div>
+              <div className="flex flex-col gap-5 mt-6">
+                <span className="font-text pb-3 border-b border-secondary-25% text-secondary-50%">
+                  Tags
+                </span>
+                <div className="inline-flex gap-4">
+                  {tags.map((tag, index) => (
+                    <Tag
+                      key={index}
+                      label={tag.label}
+                      icon={tag.icon}
+                      color={tag.color}
+                      link={tag.link}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col gap-5 mt-6">
+                <span className="font-text pb-3 border-b border-secondary-25% text-secondary-50%">
+                  Origins
+                </span>
+                <div className="inline-flex gap-4">
+                  {userStore.origins.map((origin) => (
+                    <Button
+                      key={origin}
+                      label={origin}
+                      type="full"
+                      size="tiny"
+                      title={origin}
+                      onClick={() => {}}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           )}
