@@ -35,6 +35,7 @@ export const Content = ({ link }: ContentProps) => {
                 description={control.desc}
                 configValue={settings[control.configName]}
                 controlType={control.control}
+                buttonLabel={control.buttonLabel as string}
               />
             ))}
           </div>

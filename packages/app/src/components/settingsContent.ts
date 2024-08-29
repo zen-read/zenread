@@ -9,11 +9,12 @@ export interface SettingsContentType {
       control: ControlType;
       configName: string;
       selectItems?: string[];
+      buttonLabel?: string;
     }[];
   }[];
 }
 
-export type ControlType = "toggle" | "slider" | "select" | "input";
+export type ControlType = "toggle" | "slider" | "select" | "input" | "button";
 
 const settingsContent: SettingsContentType[] = [
   {

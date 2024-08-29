@@ -1,4 +1,4 @@
-import { ControlUnit, DropdownMenu, Input } from "@zenread/ui";
+import { Button, ControlUnit, DropdownMenu, Input } from "@zenread/ui";
 import { useRef, useState } from "react";
 
 interface ControlProps {
@@ -7,6 +7,7 @@ interface ControlProps {
   controlType: string;
   configValue: string | boolean | number;
   selectItems: string[];
+  buttonLabel: string;
 }
 
 export const Control = ({
@@ -15,6 +16,7 @@ export const Control = ({
   controlType,
   selectItems,
   configValue,
+  buttonLabel,
 }: ControlProps) => {
   const [value, setValue] = useState(configValue);
   const ref = useRef({ getValue: () => value });
@@ -32,6 +34,14 @@ export const Control = ({
           )}
           {controlType === "select" && (
             <DropdownMenu selectedItem={value as string} items={selectItems} />
+          )}
+          {controlType === "button" && (
+            <Button
+              label={buttonLabel}
+              size="default"
+              onClick={() => {}}
+              type="outline"
+            />
           )}
         </label>
       }
