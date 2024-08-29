@@ -11,7 +11,13 @@ const BodyWrapper = ({ children, fullWidth, className }: BodyWrapperProps) => {
   return (
     <div className={cn("w-full", !fullWidth && "flex justify-center")}>
       <Header />
-      <div className={cn("mt-[80px]", !fullWidth && "w-[1025px]", className)}>
+      <div
+        className={cn(
+          "mt-[80px]",
+          !fullWidth && "lg:w-[1024px] w-full px-6",
+          className,
+        )}
+      >
         {children}
       </div>
     </div>
