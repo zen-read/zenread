@@ -22,7 +22,7 @@ interface ButtonParams {
 
 const variants = cva(
   [
-    "inline-flex items-center rounded transition-colors duration-135 ease-in-out",
+    "font-button inline-flex items-center rounded transition-colors duration-135 ease-in-out",
   ],
   {
     variants: {
@@ -67,7 +67,7 @@ export const Button = ({
     >
       {type !== "loading" && (
         <>
-          {label && <div className="font-button">{label}</div>}
+          {label && <>{label}</>}
           {icon && (
             <div
               className={cn(
