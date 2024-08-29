@@ -1,5 +1,5 @@
-import { PostMenu } from "@zenread/ui";
 import { cn, useScrollDir } from "@zenread/shared";
+import { PostMenu } from "@zenread/ui";
 
 interface PostPanelProps {
   isSavedPost: boolean;
@@ -11,7 +11,7 @@ const PostPanel = ({ isSavedPost }: PostPanelProps) => {
   return (
     <div
       className={cn(
-        "fixed w-[1025px] bottom-0 flex justify-center items-end pb-6 transition-transform ease-in-out",
+        "fixed lg:w-[1024px] w-full bottom-0 flex justify-center items-end pb-6 transition-transform ease-in-out",
         scrollDir === "down" && "translate-y-[74px]",
       )}
     >
