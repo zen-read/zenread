@@ -20,4 +20,4 @@ export * from "./Slider/index.js";
 export * from "./Tag/index.js";
 export * from "./TextBlock/index.js";
 export * from "./Toggle/index.js";
-
+export * from "./Input/index.js";
