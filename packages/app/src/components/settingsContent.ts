@@ -1,5 +1,6 @@
 export interface SettingsContentType {
   linkLabel: string;
+  url: string;
   group: {
     title: string;
     controls: {
@@ -7,30 +8,40 @@ export interface SettingsContentType {
       desc: string;
       control: ControlType;
       configName: string;
+      selectItems?: string[];
     }[];
   }[];
 }
 
-export type ControlType = "toggle" | "slider" | "select";
+export type ControlType = "toggle" | "slider" | "select" | "input";
 
 const settingsContent: SettingsContentType[] = [
   {
     linkLabel: "Font",
+    url: "font",
     group: [
       {
-        title: "Title",
+        title: "Font",
         controls: [
           {
-            title: "title",
-            desc: "fgdgdgs",
-            control: "toggle",
-            configName: "gdsgds",
+            title: "Font size",
+            desc: "Global font size of default text(px)",
+            control: "input",
+            configName: "font_size",
           },
           {
-            title: "title",
-            desc: "fgdgdgs",
-            control: "toggle",
-            configName: "gdsgds",
+            title: "Font headings",
+            desc: "Font type for headings",
+            control: "select",
+            configName: "font_headings",
+            selectItems: ["Sans", "Serif", "Mono"],
+          },
+          {
+            title: "Font text",
+            desc: "Font type for text",
+            control: "select",
+            configName: "font_text",
+            selectItems: ["Sans", "Serif", "Mono"],
           },
         ],
       },
@@ -38,15 +49,24 @@ const settingsContent: SettingsContentType[] = [
   },
   {
     linkLabel: "Color scheme",
+    url: "color",
     group: [
       {
-        title: "Title",
+        title: "Colors",
         controls: [
           {
-            title: "title",
-            desc: "fgdgdgs",
-            control: "slider",
-            configName: "gdsgds",
+            title: "Color scheme",
+            desc: "Global color scheme for the app",
+            control: "select",
+            configName: "color_scheme",
+            selectItems: ["Default", "Cat", "Dog"],
+          },
+          {
+            title: "Dark mode",
+            desc: "Toggle dark mode(default – set mode by system default)",
+            control: "select",
+            configName: "color_scheme",
+            selectItems: ["System", "Light", "Dark"],
           },
         ],
       },
