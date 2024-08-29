@@ -1,7 +1,9 @@
 use serde::{Deserialize, Serialize};
 use serde_json;
-use std::{fs, path::PathBuf};
-use tauri::{AppHandle, Manager};
+use std::fs;
+use tauri::AppHandle;
+
+use crate::utils::app_store::get_config_path;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum DarkMode {
@@ -66,40 +68,6 @@ impl Default for AppConfig {
 }
 
 impl AppConfig {
-    /// Gets the path of the configuration file.
-    ///
-    /// # Arguments
-    ///
-    /// * `handle` - The handle to the application.
-    ///
-    /// # Returns
-    ///
-    /// The path of the configuration file.
-    fn get_config_path(handle: AppHandle) -> PathBuf {
-        handle
-            .path()
-            .app_config_dir()
-            .unwrap()
-            .join("settings.json")
-    }
-
-    /// Gets the directory of the configuration file.
-    ///
-    /// # Arguments
-    ///
-    /// * `handle` - The handle to the application.
-    ///
-    /// # Returns
-    ///
-    /// The directory of the configuration file.
-    #[warn(dead_code)]
-    fn get_config_dir(handle: AppHandle) -> PathBuf {
-        Self::get_config_path(handle)
-            .parent()
-            .unwrap()
-            .to_path_buf()
-    }
-
     /// Creates the configuration file if it does not already exist.
     ///
     /// # Arguments
@@ -110,7 +78,7 @@ impl AppConfig {
     ///
     /// This function panics if it fails to create the configuration directory.
     pub fn init_config(handle: AppHandle) {
-        let config_path = Self::get_config_path(handle);
+        let config_path = get_config_path(handle);
         if !config_path.exists() {
             fs::create_dir_all(config_path.parent().unwrap())
                 .expect("Failed to create config directory");
@@ -133,7 +101,7 @@ impl AppConfig {
     ///
     /// The loaded configuration.
     pub fn load(handle: AppHandle) -> Self {
-        let config_path = Self::get_config_path(handle);
+        let config_path = get_config_path(handle);
         println!("{}", config_path.to_str().unwrap());
         let config_file = fs::File::open(config_path).expect("Failed to open config file");
         serde_json::from_reader(config_file).expect("Failed to parse config file")
@@ -146,7 +114,7 @@ impl AppConfig {
     /// * `handle` - The handle to the application.
     #[warn(dead_code)]
     pub fn save(&self, handle: AppHandle) {
-        let config_path = Self::get_config_path(handle);
+        let config_path = get_config_path(handle);
         let config_file = fs::File::create(config_path).expect("Failed to create config file");
         serde_json::to_writer_pretty(config_file, self).expect("Failed to write config file")
     }
