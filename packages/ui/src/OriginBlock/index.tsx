@@ -22,6 +22,8 @@ interface OriginBlockProps {
   loaded: boolean;
   /** Classes for Tailwind styling */
   className?: string;
+  /** Save action */
+  saveHandler?: () => void;
 }
 
 /** Information block of origin */
@@ -33,6 +35,7 @@ export const OriginBlock = ({
   links,
   loaded,
   className,
+  saveHandler,
 }: OriginBlockProps) => {
   const [opened, setOpened] = useState(false);
 
@@ -52,6 +55,7 @@ export const OriginBlock = ({
             title={isSaved ? "Unsave from read list" : "Save to read list"}
             size="small"
             type="transparent"
+            onClick={saveHandler}
             icon={isSaved ? <Heart /> : <HeartOutline />}
           />
           <Button
