@@ -86,6 +86,11 @@ module.exports = {
         12: "64px",
         13: "96px",
       },
+      screens: {
+        hmd: {
+          raw: "(min-height: 768px)",
+        },
+      },
       borderRadius: {
         none: "0",
         DEFAULT: "4px",
