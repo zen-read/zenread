@@ -28,12 +28,24 @@ fn load_user_store(app_handle: AppHandle) -> String {
     serde_json::to_string(&store).unwrap()
 }
 
+#[tauri::command]
+fn update_user_store(app_handle: AppHandle, store: String) -> String {
+  let store = UserStore::update(app_handle, store);
+  serde_json::to_string(&store).unwrap()
+}
+
 fn main() {
     let builder = tauri::Builder::default();
 
     builder
         .plugin(tauri_plugin_fs::init())
-        .invoke_handler(tauri::generate_handler![load_config, init_config, init_user_store, load_user_store])
+        .invoke_handler(tauri::generate_handler![
+          load_config,
+          init_config,
+          init_user_store,
+          load_user_store,
+          update_user_store
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

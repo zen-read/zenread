@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 use serde_json;
-use std::fs;
+use std::{fs, io::Write};
 use tauri::AppHandle;
 
 use crate::utils::app_store::get_config_dir;
@@ -59,7 +59,7 @@ impl UserStore {
     let user_store = Self::default();
     let store_file = fs::File::create(store_dir.join("user_store.json")).expect("Failed to create user store file");
     serde_json::to_writer_pretty(store_file, &user_store)
-        .expect("Failed to write user store file");
+        .expect("Failed to write user store file")
   }
 
   pub fn load(handle: AppHandle) -> Self {
@@ -67,5 +67,12 @@ impl UserStore {
     println!("{}", store_path.to_str().unwrap());
     let store_file = fs::File::open(store_path).expect("Failed to open user store file");
     serde_json::from_reader(store_file).expect("Failed to parse user store file")
+  }
+
+  pub fn update(handle: AppHandle, store: String) {
+    let store_path = get_config_dir(handle).join("user_store.json");
+    let mut store_file = fs::File::create(store_path).expect("Failed to open user store file");
+    store_file.write_all(store.as_bytes())
+        .expect("Failed to update user store file")
   }
 }
