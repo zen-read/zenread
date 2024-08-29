@@ -17,7 +17,7 @@ export const App = () => {
       <Routes location={background || location}>
         <Route path="/">
           <Route index element={<Index />} />
-          <Route path="settings" element={<SettingsOverlay />} />
+          <Route path="settings/:id" element={<SettingsOverlay />} />
           <Route path="post" element={<PostPage />} />
           <Route path="origin" element={<OriginPage />} />
           <Route path="readlist" element={<ReadList />} />
@@ -25,7 +25,7 @@ export const App = () => {
       </Routes>
       {background && (
         <Routes>
-          <Route path="/settings" element={<SettingsOverlay />} />
+          <Route path="/settings/:id" element={<SettingsOverlay />} />
         </Routes>
       )}
     </>
