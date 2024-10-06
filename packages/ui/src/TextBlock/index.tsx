@@ -13,23 +13,23 @@ interface TextBlockProps {
 const variants = cva(["first:pt-0"], {
   variants: {
     type: {
-      h1: "pt-12 pb-6 font-heading-1",
-      h2: "font-heading-2 pt-11 pb-4",
-      h3: "font-heading-3 pt-11 pb-4",
-      h4: "font-heading-4 pt-11 pb-4",
-      h5: "font-heading-5 pt-11 pb-4",
-      h6: "font-heading-6 pt-11 pb-4",
-      p: "font-text py-6",
+      H1: "pt-12 pb-6 font-heading-1",
+      H2: "font-heading-2 pt-11 pb-4",
+      H3: "font-heading-3 pt-11 pb-4",
+      H4: "font-heading-4 pt-11 pb-4",
+      H5: "font-heading-5 pt-11 pb-4",
+      H6: "font-heading-6 pt-11 pb-4",
+      P: "font-text py-6",
     },
   },
   defaultVariants: {
-    type: "p",
+    type: "P",
   },
 });
 
 /** Universal content block for article  */
 export const TextBlock = ({ type, children, loaded }: TextBlockProps) => {
-  const BlockTag = `${type}` as keyof JSX.IntrinsicElements;
+  const BlockTag = `${type.toLowerCase()}` as keyof JSX.IntrinsicElements;
 
   return (
     <>
