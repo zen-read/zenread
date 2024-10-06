@@ -3,8 +3,11 @@ import Bookmark from "#Icons/mid/Bookmark.js";
 import Heart from "#Icons/mid/Heart.js";
 import HeartOutline from "#Icons/mid/HeartOutline.js";
 import List from "#Icons/mid/List.js";
+import { cn } from "@zenread/shared";
 
 interface PostMenuParams {
+  /** Class name */
+  className: string;
   /** Is post placed in "Read list" yet */
   isSavedPost: boolean;
   /** Function to toggle status of saving. If post is saved menu will have button for toggling bookmark overlay */
@@ -17,13 +20,19 @@ interface PostMenuParams {
 
 /** Post menu for managing reading post */
 export const PostMenu = ({
+  className,
   isSavedPost,
   saveFn,
   listFn,
   bookmarkFn,
 }: PostMenuParams) => {
   return (
-    <div className="flex items-center gap-4 rounded-md border border-secondary px-5 py-4 bg-primary">
+    <div
+      className={cn(
+        "flex items-center gap-4 rounded-md border border-secondary px-5 py-4 bg-primary",
+        className,
+      )}
+    >
       <Button
         title={isSavedPost ? "Unsave from read list" : "Save to read list"}
         onClick={saveFn}
