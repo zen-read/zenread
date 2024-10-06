@@ -2,7 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use tauri::AppHandle;
-use utils::{config::AppConfig, user_store::UserStore, post_store::PostStore};
+use utils::{config::AppConfig, user_store::UserStore, post_store::PostStore, post_store::PostData};
 
 mod utils;
 
@@ -51,6 +51,21 @@ fn init_post_store(app_handle: AppHandle) {
     PostStore::init(app_handle)
 }
 
+#[tauri::command]
+fn check_post_store(app_handle: AppHandle) {
+    PostData::check(app_handle)
+}
+
+#[tauri::command]
+fn save_post(app_handle: AppHandle, data: String) {
+    PostData::save(app_handle, serde_json::from_str(&data).unwrap());
+}
+
+#[tauri::command]
+fn delete_post(app_handle: AppHandle, id: i64) {
+    PostData::delete(app_handle, id);
+}
+
 fn main() {
     let builder = tauri::Builder::default();
 
@@ -64,7 +79,10 @@ fn main() {
           update_user_store,
           load_post_store,
           update_post_store,
-          init_post_store
+          init_post_store,
+          check_post_store,
+          save_post,
+          delete_post
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

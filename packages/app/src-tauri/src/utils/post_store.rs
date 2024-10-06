@@ -69,6 +69,20 @@ impl Default for PostStore {
   }
 }
 
+impl Default for PostData {
+  fn default() -> Self {
+    Self {
+      id: 0,
+      cover: String::new(),
+      origin_name: String::new(),
+      origin_logo: String::new(),
+      date_of_publish: String::new(),
+      title: String::new(),
+      content: Vec::new()
+    }
+  }
+}
+
 impl PostStore {
   pub fn init(handle: AppHandle) {
     let store_dir = get_post_store_dir(handle);
@@ -95,5 +109,30 @@ impl PostStore {
     let mut store_file = fs::File::create(store_path).expect("Failed to open post store file");
     store_file.write_all(store.to_string().as_bytes())
         .expect("Failed to update post store file")
+  }
+}
+
+impl PostData {
+  pub fn check(handle: AppHandle) {
+    let store_dir = get_post_store_dir(handle.clone());
+
+    if !store_dir.exists() {
+      PostStore::init(handle);
+    } else {
+      println!("Post store already exists! You can add posts later");
+    }
+  }
+
+  pub fn save(handle: AppHandle, data: PostData) {
+    let store_dir = get_post_store_dir(handle);
+
+    let post_file = fs::File::create(store_dir.join(data.id.to_string() + ".json")).expect("Failed to create post file");
+    serde_json::to_writer_pretty(post_file, &data)
+        .expect("Failed to write post file");
+  }
+
+  pub fn delete(handle: AppHandle, id: i64) {
+    let store_dir = get_post_store_dir(handle);
+    fs::remove_file(store_dir.join(id.to_string() + ".json")).expect("Failed to delete post file");
   }
 }
