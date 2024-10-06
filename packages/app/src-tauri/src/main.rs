@@ -2,7 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use tauri::AppHandle;
-use utils::{config::AppConfig, user_store::UserStore};
+use utils::{config::AppConfig, user_store::UserStore, post_store::PostStore};
 
 mod utils;
 
@@ -34,6 +34,23 @@ fn update_user_store(app_handle: AppHandle, store: String) -> String {
   serde_json::to_string(&store).unwrap()
 }
 
+#[tauri::command]
+fn load_post_store(app_handle: AppHandle) -> String {
+    let store = PostStore::load(app_handle);
+    serde_json::to_string(&store).unwrap()
+}
+
+#[tauri::command]
+fn update_post_store(app_handle: AppHandle, store: i64) -> String {
+  let store = PostStore::update(app_handle, store);
+  serde_json::to_string(&store).unwrap()
+}
+
+#[tauri::command]
+fn init_post_store(app_handle: AppHandle) {
+    PostStore::init(app_handle)
+}
+
 fn main() {
     let builder = tauri::Builder::default();
 
@@ -44,7 +61,10 @@ fn main() {
           init_config,
           init_user_store,
           load_user_store,
-          update_user_store
+          update_user_store,
+          load_post_store,
+          update_post_store,
+          init_post_store
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
