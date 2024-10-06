@@ -1,6 +1,8 @@
 import { cn, useScrollDir } from "@zenread/shared";
 import { PostMenu } from "@zenread/ui";
 import { usePostStore } from "../store/usePostStore.js";
+import { savePost } from "../utils/savePost.js";
+import { updatePostStore } from "../utils/updatePostStore.js";
 
 interface PostPanelProps {
   isSavedPost: boolean;
@@ -12,6 +14,8 @@ const PostPanel = ({ isSavedPost }: PostPanelProps) => {
 
   const handleSave = () => {
     console.log(postStore.data);
+    savePost(JSON.stringify(postStore.data));
+    updatePostStore(postStore.data.id);
   };
 
   return (
