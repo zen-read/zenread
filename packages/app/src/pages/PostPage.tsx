@@ -1,17 +1,19 @@
-import { formatDate, TextBlockType } from "@zenread/shared";
+import { formatDate, PostDataType } from "@zenread/shared/src";
 import { Button, OriginLogo, TextBlock } from "@zenread/ui";
 import { Heart, HeartOutline, Origin } from "@zenread/ui/icons/mid/index.js";
+import { useEffect, useState } from "react";
 import BodyWrapper from "../components/BodyWrapper.js";
 import PostPanel from "../components/PostPanel.js";
+import { usePostStore } from "../store/usePostStore.js";
+import { initPostStore } from "../utils/initPostStore.js";
 
-const templateData: TemplateDataType = {
+const templateData: PostDataType = {
   cover: "https://i1.sndcdn.com/artworks-oGvaMt0dsBWPL7WZ-qgbAMA-t500x500.jpg",
   originName: "Maxwell.com",
   originLogo:
     "https://m.media-amazon.com/images/I/31+8EYj8ZdL._UXNaN_FMjpg_QL85_.jpg",
   dateOfPublish: new Date(),
   title: "Title",
-  saved: false,
   content: [
     {
       type: "h1",
@@ -45,25 +47,19 @@ const templateData: TemplateDataType = {
   ],
 };
 
-interface TemplateDataType {
-  cover: string;
-  originName: string;
-  originLogo: string;
-  dateOfPublish: Date;
-  saved: boolean;
-  title: string;
-  content: ContentType[];
-}
-
-type ContentType = {
-  type: TextBlockType["type"];
-  content: string;
-};
-
 const PostPage = () => {
+  const postStore = usePostStore();
+  const [isSavedPost, setIsSavedPost] = useState(false);
+
+  useEffect(() => {
+    postStore.setData(templateData);
+    console.log(postStore.data);
+    initPostStore();
+  }, []);
+
   return (
     <BodyWrapper fullWidth={false}>
-      <PostPanel isSavedPost={templateData.saved} />
+      <PostPanel isSavedPost={false} />
       <img
         className="w-full h-[400px] rounded-lg object-cover"
         src={templateData.cover}
@@ -92,10 +88,8 @@ const PostPage = () => {
             size="small"
           />
           <Button
-            title={
-              templateData.saved ? "Unsave from read list" : "Save to read list"
-            }
-            icon={templateData.saved ? <Heart /> : <HeartOutline />}
+            title={isSavedPost ? "Unsave from read list" : "Save to read list"}
+            icon={isSavedPost ? <Heart /> : <HeartOutline />}
             type="transparent"
             size="small"
           />

@@ -1,5 +1,6 @@
 import { cn, useScrollDir } from "@zenread/shared";
 import { PostMenu } from "@zenread/ui";
+import { usePostStore } from "../store/usePostStore.js";
 
 interface PostPanelProps {
   isSavedPost: boolean;
@@ -7,6 +8,11 @@ interface PostPanelProps {
 
 const PostPanel = ({ isSavedPost }: PostPanelProps) => {
   const scrollDir = useScrollDir();
+  const postStore = usePostStore();
+
+  const handleSave = () => {
+    console.log(postStore.data);
+  };
 
   return (
     <div
@@ -18,7 +24,7 @@ const PostPanel = ({ isSavedPost }: PostPanelProps) => {
       <PostMenu
         className="z-10"
         isSavedPost={isSavedPost}
-        saveFn={() => {}}
+        saveFn={handleSave}
         listFn={() => {}}
         bookmarkFn={() => {}}
       />
