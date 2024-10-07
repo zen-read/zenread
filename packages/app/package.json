@@ -11,20 +11,20 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@tauri-apps/api": "2.0.0-rc.0",
-    "@tauri-apps/plugin-fs": "2.0.0-rc.0",
+    "@tauri-apps/api": "2.0.1",
+    "@tauri-apps/plugin-fs": "2.0.0",
     "@zenread/shared": "workspace:*",
     "@zenread/tailwind-config": "workspace:*",
     "@zenread/tsconfig": "workspace:*",
     "@zenread/ui": "workspace:*",
-    "react": "19.0.0-rc-8269d55d-20240802",
-    "react-dom": "19.0.0-rc-8269d55d-20240802",
-    "react-router-dom": "^6.26.0",
-    "zustand": "^4.5.4"
+    "react": "19.0.0-rc-1460d67c-20241003",
+    "react-dom": "19.0.0-rc-1460d67c-20241003",
+    "react-router-dom": "^6.26.2",
+    "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {
     "@tauri-apps/api": "next",
-    "@tauri-apps/cli": "2.0.0-rc.0",
+    "@tauri-apps/cli": "2.0.1",
     "@types/react": "npm:types-react@rc",
     "@types/react-dom": "npm:types-react-dom@rc",
     "@vitejs/plugin-react": "^4.2.1",
@@ -32,7 +32,7 @@
     "postcss": "^8.4.40",
     "tailwindcss": "^3.4.6",
     "typescript": "^5.2.2",
-    "vite": "^5.3.5"
+    "vite": "^5.4.8"
   },
   "overrides": {
     "@types/react": "npm:types-react@rc",
