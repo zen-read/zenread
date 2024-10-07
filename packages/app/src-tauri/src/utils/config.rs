@@ -106,16 +106,4 @@ impl AppConfig {
         let config_file = fs::File::open(config_path).expect("Failed to open config file");
         serde_json::from_reader(config_file).expect("Failed to parse config file")
     }
-
-    /// Saves the configuration to the file.
-    ///
-    /// # Arguments
-    ///
-    /// * `handle` - The handle to the application.
-    #[warn(dead_code)]
-    pub fn save(&self, handle: AppHandle) {
-        let config_path = get_config_path(handle);
-        let config_file = fs::File::create(config_path).expect("Failed to create config file");
-        serde_json::to_writer_pretty(config_file, self).expect("Failed to write config file")
-    }
 }
