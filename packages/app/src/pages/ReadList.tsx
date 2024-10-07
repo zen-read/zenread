@@ -1,9 +1,11 @@
-import type { PostCardProps, TagProps } from "@zenread/ui";
+import type { PostDataType } from "@zenread/shared/src";
+import type { TagProps } from "@zenread/ui";
 import { Button, PostCard, SearchInput, Tag } from "@zenread/ui";
 import { Filter } from "@zenread/ui/icons/mid/index.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BodyWrapper from "../components/BodyWrapper.js";
 import { useUserStore } from "../store/useUserStore.js";
+import { getAllSavedPosts } from "../utils/getAllSavedPosts.js";
 
 const tags: TagProps[] = [
   {
@@ -26,39 +28,20 @@ const tags: TagProps[] = [
   },
 ];
 
-const templateArticles: PostCardProps[] = [
-  {
-    backgroundImage:
-      "https://i1.sndcdn.com/artworks-oGvaMt0dsBWPL7WZ-qgbAMA-t500x500.jpg",
-    header: "Maxwell",
-    date: new Date(),
-    originLogo:
-      "https://m.media-amazon.com/images/I/31+8EYj8ZdL._UXNaN_FMjpg_QL85_.jpg",
-    loaded: true,
-    href: "/post",
-    originUrl: "",
-    tags: [<Tag key={0} link="" label="Design" color="orange" />],
-  },
-  {
-    backgroundImage:
-      "https://i1.sndcdn.com/artworks-oGvaMt0dsBWPL7WZ-qgbAMA-t500x500.jpg",
-    header: "Maxwell",
-    date: new Date(),
-    originLogo:
-      "https://m.media-amazon.com/images/I/31+8EYj8ZdL._UXNaN_FMjpg_QL85_.jpg",
-    loaded: true,
-    href: "/post",
-    originUrl: "",
-    tags: [
-      <Tag key={2} link="" label="Dev" color="water" />,
-      <Tag key={3} link="" label="Science" color="mint" />,
-    ],
-  },
-];
-
 const ReadList = () => {
   const [isFilterShowing, setIsFilterShowing] = useState(false);
+  const [posts, setPosts] = useState<PostDataType[]>([]);
   const { userStore } = useUserStore();
+
+  useEffect(() => {
+    setIsFilterShowing(false);
+
+    getAllSavedPosts().then((r) => {
+      if (r) {
+        setPosts(r as PostDataType[]);
+      }
+    });
+  }, [userStore, setPosts]);
 
   return (
     <BodyWrapper className="px-6" fullWidth>
@@ -116,9 +99,22 @@ const ReadList = () => {
         <div>
           <h4 className="font-heading-4">Recently added</h4>
           <div className="mt-7 grid grid-cols-2 gap-[18px]">
-            {templateArticles.map((data, index) => (
-              <PostCard key={index} {...data} />
-            ))}
+            {posts.length > 0 ? (
+              posts.map((data, index) => (
+                <PostCard
+                  key={index}
+                  tags={data.tags}
+                  header={data.title}
+                  date={data.date_of_publish}
+                  originLogo={data.origin_logo}
+                  originUrl={data.origin_link}
+                  backgroundImage={data.cover}
+                  href="/post"
+                />
+              ))
+            ) : (
+              <div>No data</div>
+            )}
           </div>
         </div>
       </div>
