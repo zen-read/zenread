@@ -41,9 +41,8 @@ fn load_post_store(app_handle: AppHandle) -> String {
 }
 
 #[tauri::command]
-fn update_post_store(app_handle: AppHandle, store: i64) -> String {
-  let store = PostStore::update(app_handle, store);
-  serde_json::to_string(&store).unwrap()
+fn update_post_store(app_handle: AppHandle, store: i32) {
+    PostStore::update(app_handle, store);
 }
 
 #[tauri::command]
@@ -62,7 +61,7 @@ fn save_post(app_handle: AppHandle, data: String) {
 }
 
 #[tauri::command]
-fn delete_post(app_handle: AppHandle, id: i64) {
+fn delete_post(app_handle: AppHandle, id: i32) {
     PostData::delete(app_handle, id);
 }
 

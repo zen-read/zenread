@@ -8,7 +8,6 @@ import { usePostStore } from "../store/usePostStore.js";
 import { initPostStore } from "../utils/initPostStore.js";
 
 const templateData: PostDataType = {
-  id: 0,
   cover: "https://i1.sndcdn.com/artworks-oGvaMt0dsBWPL7WZ-qgbAMA-t500x500.jpg",
   origin_name: "Maxwell.com",
   origin_logo:
