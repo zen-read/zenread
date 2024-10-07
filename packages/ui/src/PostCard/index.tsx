@@ -1,5 +1,6 @@
 import { Tag } from "#Tag/index.js";
 import { cn, formatDate } from "@zenread/shared";
+import type { TagType } from "@zenread/shared/src";
 import { OriginLogo } from "../OriginLogo/index.js";
 
 export interface PostCardProps {
@@ -14,9 +15,9 @@ export interface PostCardProps {
   /** Origin logo image */
   originLogo: string;
   /** Post tags if post is saved yet */
-  tags?: JSX.Element[];
+  tags?: TagType[];
   /** Is content loaded */
-  loaded: boolean;
+  loaded?: boolean;
   /** Link to full page of article */
   href?: string;
 }
@@ -29,7 +30,7 @@ export const PostCard = ({
   originLogo,
   tags,
   originUrl,
-  loaded,
+  loaded = true,
   href,
 }: PostCardProps) => {
   return (
@@ -45,7 +46,11 @@ export const PostCard = ({
           {tags && (
             <>
               {loaded ? (
-                <div className="flex gap-4">{tags.map((tag) => tag)}</div>
+                <div className="flex gap-4">
+                  {tags.map((tag) => (
+                    <Tag key={tag.label} label={tag.label} color={tag.color} />
+                  ))}
+                </div>
               ) : (
                 <div className="flex gap-4">
                   <Tag label="" color="loading" />
