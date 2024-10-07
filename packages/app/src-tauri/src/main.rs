@@ -46,6 +46,11 @@ fn add_post_store(app_handle: AppHandle, store: i32) {
 }
 
 #[tauri::command]
+fn get_all_saved_posts(app_handle: AppHandle) -> Vec<PostData> {
+    PostData::get_all_saved_posts(app_handle)
+}
+
+#[tauri::command]
 fn init_post_store(app_handle: AppHandle) {
     PostStore::init(app_handle)
 }
@@ -81,7 +86,8 @@ fn main() {
           init_post_store,
           check_post_store,
           save_post,
-          delete_post
+          delete_post,
+          get_all_saved_posts
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
