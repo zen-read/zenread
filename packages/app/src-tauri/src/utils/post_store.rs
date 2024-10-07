@@ -101,10 +101,20 @@ impl PostStore {
     serde_json::from_reader(store_file).expect("Failed to parse post store file")
   }
 
-  pub fn update(handle: AppHandle, id: i32) {
+  pub fn add_post(handle: AppHandle, id: i32) {
     let store_path = get_post_store_dir(handle.clone()).join("post_store.json");
     let mut updated_store = Self::load(handle);
     let _ = &updated_store.posts.push(id);
+
+    let mut store_file = fs::File::create(store_path).expect("Failed to open post store file");
+    store_file.write_all(serde_json::to_string(&updated_store).unwrap().as_bytes())
+        .expect("Failed to update post store file");
+  }
+
+  pub fn delete_post(handle: AppHandle, id: i32) {
+    let store_path = get_post_store_dir(handle.clone()).join("post_store.json");
+    let mut updated_store = Self::load(handle);
+    let _ = &updated_store.posts.retain(|&x| x != id);
 
     let mut store_file = fs::File::create(store_path).expect("Failed to open post store file");
     store_file.write_all(serde_json::to_string(&updated_store).unwrap().as_bytes())
@@ -131,11 +141,13 @@ impl PostData {
     serde_json::to_writer_pretty(post_file, &data)
         .expect("Failed to write post file");
 
-    PostStore::update(handle, id);
+    PostStore::add_post(handle, id);
   }
 
   pub fn delete(handle: AppHandle, id: i32) {
-    let store_dir = get_post_store_dir(handle);
+    let store_dir = get_post_store_dir(handle.clone());
     fs::remove_file(store_dir.join(id.to_string() + ".json")).expect("Failed to delete post file");
+
+    PostStore::delete_post(handle, id);
   }
 }

@@ -41,8 +41,8 @@ fn load_post_store(app_handle: AppHandle) -> String {
 }
 
 #[tauri::command]
-fn update_post_store(app_handle: AppHandle, store: i32) {
-    PostStore::update(app_handle, store);
+fn add_post_store(app_handle: AppHandle, store: i32) {
+    PostStore::add_post(app_handle, store);
 }
 
 #[tauri::command]
@@ -77,7 +77,7 @@ fn main() {
           load_user_store,
           update_user_store,
           load_post_store,
-          update_post_store,
+          add_post_store,
           init_post_store,
           check_post_store,
           save_post,
