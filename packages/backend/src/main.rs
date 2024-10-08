@@ -1,12 +1,13 @@
 use actix_web::{web, App, HttpServer, Responder, HttpResponse};
 
 mod origins;
+mod parser;
+mod utils;
 
 async fn greet() -> impl Responder {
     HttpResponse::Ok().body("Hello, Rust backend!")
 }
 
-// Основная функция
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {

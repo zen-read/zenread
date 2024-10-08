@@ -1,10 +1,17 @@
 [
   {
-    "short_name": "maxwell",
-    "name": "Maxwell",
-    "info": "Maxwell – the Cat",
-    "origin_link": "https://maxwellcat.world",
-    "logo": "https://m.media-amazon.com/images/I/31+8EYj8ZdL._UXNaN_FMjpg_QL85_.jpg",
-    "links": []
+    "short_name": "tproger",
+    "name": "Tproger",
+    "info": "Tproger — издание о разработке и обо всём, что с ней связано.",
+    "origin_link": "https://tproger.ru/",
+    "logo": "https://habrastorage.org/getpro/moikrug/uploads/company/100/007/151/9/logo/medium_3139276c5ac26e4363ac297619c8f0b9.png",
+    "method": "Sitemap",
+    "sitemap": "https://tproger.ru/sitemap.xml",
+    "links": [
+      {
+        "title": "VK",
+        "link": "https://vk.com/tproger"
+      }
+    ]
   }
 ]
