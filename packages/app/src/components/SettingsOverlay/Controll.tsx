@@ -19,7 +19,7 @@ export const Control = ({
   buttonLabel,
 }: ControlProps) => {
   const [value, setValue] = useState(configValue);
-  const ref = useRef({ getValue: () => value });
+  const ref = useRef({ getValue: () => value as string });
   return (
     <ControlUnit
       label={label}
