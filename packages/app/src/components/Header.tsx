@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div
       className={cn(
-        "fixed top-6 left-6 transition-transform ease-in-out",
+        "fixed top-6 left-6 transition-transform ease-in-out z-50",
         scrollDir === "down" && "-translate-y-[66px]",
       )}
     >

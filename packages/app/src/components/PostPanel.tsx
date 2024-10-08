@@ -19,7 +19,7 @@ const PostPanel = ({ isSavedPost }: PostPanelProps) => {
   return (
     <div
       className={cn(
-        "fixed lg:w-[1024px] w-full bottom-0 flex justify-center items-end pb-6 transition-transform ease-in-out",
+        "fixed w-full left-0 bottom-0 flex justify-center items-end pb-6 transition-transform ease-in-out",
         scrollDir === "down" && "translate-y-[74px]",
       )}
     >

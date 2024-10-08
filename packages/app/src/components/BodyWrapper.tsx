@@ -13,7 +13,7 @@ const BodyWrapper = ({ children, fullWidth, className }: BodyWrapperProps) => {
       <Header />
       <div
         className={cn(
-          "mt-[80px]",
+          "my-[80px]",
           !fullWidth && "lg:w-[1024px] w-full px-6",
           className,
         )}
