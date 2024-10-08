@@ -14,6 +14,9 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tauri-plugin-fs = "2"
 rand = "0.8.5"
+scraper = "0.19.0"
+reqwest = { version = "0.12.4", features = ["blocking"] }
+anyhow = "1.0.82"
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]
