@@ -2,7 +2,7 @@
 resolver = "1"
 members = [
   "packages/app/src-tauri"
-]
+, "packages/backend"]
 
 [workspace.package]
 version = "0.0.0"
